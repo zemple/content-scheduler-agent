@@ -1,0 +1,81 @@
+{
+  "request_id": "batch_pending-001",
+  "mode": "mock",
+  "model": "offline-fixed-policy-v1",
+  "task_status": "awaiting_confirmation",
+  "termination": "finished",
+  "steps": 11,
+  "max_steps": 20,
+  "items": [
+    {
+      "material_id": "M01",
+      "status": "awaiting_confirmation",
+      "review_status": "approved",
+      "risk_reasons": [],
+      "missing_fields": [],
+      "requested_time": "2026-11-01T10:00:00+00:00",
+      "hard_time": true,
+      "suggested_time": "2026-11-01T11:00:00+00:00",
+      "pending_items": [
+        "time_change"
+      ],
+      "draft_status": "saved",
+      "draft_id": "D-8b82ce76d9af4804",
+      "confirmation_status": "pending",
+      "uncompleted_reasons": [],
+      "saved_draft_validation": {
+        "source": "final_safety_recheck",
+        "valid": true,
+        "problems": [],
+        "review": {
+          "ok": true,
+          "material_id": "M01",
+          "review_status": "approved",
+          "missing_fields": [],
+          "risks": [],
+          "rule_version": "synthetic-2026-10-28-v1"
+        }
+      },
+      "duplicate": false,
+      "publication_status": "not_published",
+      "tool_errors": []
+    },
+    {
+      "material_id": "M05",
+      "status": "awaiting_confirmation",
+      "review_status": "approved",
+      "risk_reasons": [],
+      "missing_fields": [],
+      "requested_time": "2026-11-01T10:00:00+00:00",
+      "hard_time": true,
+      "suggested_time": "2026-11-01T12:00:00+00:00",
+      "pending_items": [
+        "time_change"
+      ],
+      "draft_status": "saved",
+      "draft_id": "D-0fccd475b6234e56",
+      "confirmation_status": "pending",
+      "uncompleted_reasons": [],
+      "saved_draft_validation": {
+        "source": "final_safety_recheck",
+        "valid": true,
+        "problems": [],
+        "review": {
+          "ok": true,
+          "material_id": "M05",
+          "review_status": "approved",
+          "missing_fields": [],
+          "risks": [],
+          "rule_version": "synthetic-2026-10-28-v1"
+        }
+      },
+      "duplicate": false,
+      "publication_status": "not_published",
+      "tool_errors": []
+    }
+  ],
+  "data_sha256": "35fcfd39ffae5d4ee65d8e6c0e2b95c68670a8a4132b678ccf4a09ef16e9d766",
+  "run_at": "2026-10-28T06:17:44.384693+00:00",
+  "elapsed_seconds": 0.002,
+  "limitation": "Mock verifies workflow only, not real model decisions."
+}

@@ -1,0 +1,46 @@
+{
+  "request_id": "duplicate-001",
+  "mode": "mock",
+  "model": "offline-fixed-policy-v1",
+  "task_status": "completed",
+  "termination": "finished",
+  "steps": 5,
+  "max_steps": 12,
+  "items": [
+    {
+      "material_id": "M01",
+      "status": "completed",
+      "review_status": "approved",
+      "risk_reasons": [],
+      "missing_fields": [],
+      "requested_time": "2026-11-01T11:00:00+00:00",
+      "hard_time": true,
+      "suggested_time": "2026-11-01T11:00:00+00:00",
+      "pending_items": [],
+      "draft_status": "saved",
+      "draft_id": "D-059a913a86d34a26",
+      "confirmation_status": "confirmed",
+      "uncompleted_reasons": [],
+      "saved_draft_validation": {
+        "source": "final_safety_recheck",
+        "valid": true,
+        "problems": [],
+        "review": {
+          "ok": true,
+          "material_id": "M01",
+          "review_status": "approved",
+          "missing_fields": [],
+          "risks": [],
+          "rule_version": "synthetic-2026-10-28-v1"
+        }
+      },
+      "duplicate": false,
+      "publication_status": "not_published",
+      "tool_errors": []
+    }
+  ],
+  "data_sha256": "35fcfd39ffae5d4ee65d8e6c0e2b95c68670a8a4132b678ccf4a09ef16e9d766",
+  "run_at": "2026-10-28T06:17:43.455435+00:00",
+  "elapsed_seconds": 0.001,
+  "limitation": "Mock verifies workflow only, not real model decisions."
+}

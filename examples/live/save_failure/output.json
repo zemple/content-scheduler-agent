@@ -1,0 +1,48 @@
+{
+  "request_id": "save_failure-001",
+  "mode": "live",
+  "model": "gpt-4.1-mini",
+  "task_status": "incomplete",
+  "termination": "finished",
+  "steps": 7,
+  "max_steps": 12,
+  "items": [
+    {
+      "material_id": "M01",
+      "status": "incomplete",
+      "review_status": "approved",
+      "risk_reasons": [],
+      "missing_fields": [],
+      "requested_time": "2026-11-01T10:00:00+00:00",
+      "hard_time": true,
+      "suggested_time": "2026-11-01T11:00:00+00:00",
+      "pending_items": [
+        "time_change"
+      ],
+      "draft_status": "failed",
+      "draft_id": null,
+      "confirmation_status": "not_confirmed",
+      "uncompleted_reasons": [
+        "save_failed",
+        "tool_unavailable"
+      ],
+      "saved_draft_validation": null,
+      "duplicate": false,
+      "publication_status": "not_published",
+      "tool_errors": [
+        {
+          "tool": "save_draft",
+          "error": "tool_unavailable"
+        },
+        {
+          "tool": "save_draft",
+          "error": "tool_unavailable"
+        }
+      ]
+    }
+  ],
+  "data_sha256": "35fcfd39ffae5d4ee65d8e6c0e2b95c68670a8a4132b678ccf4a09ef16e9d766",
+  "run_at": "2026-10-28T06:18:14.940523+00:00",
+  "elapsed_seconds": 5.58,
+  "limitation": null
+}

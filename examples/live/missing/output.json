@@ -1,0 +1,40 @@
+{
+  "request_id": "missing-001",
+  "mode": "live",
+  "model": "gpt-4.1-mini",
+  "task_status": "needs_input",
+  "termination": "finished",
+  "steps": 3,
+  "max_steps": 12,
+  "items": [
+    {
+      "material_id": "M02",
+      "status": "needs_input",
+      "review_status": "needs_input",
+      "risk_reasons": [],
+      "missing_fields": [
+        "rights_confirmed"
+      ],
+      "requested_time": "2026-11-01T10:00:00+00:00",
+      "hard_time": true,
+      "suggested_time": null,
+      "pending_items": [
+        "provide:rights_confirmed"
+      ],
+      "draft_status": "not_saved",
+      "draft_id": null,
+      "confirmation_status": "not_confirmed",
+      "uncompleted_reasons": [
+        "review_needs_input"
+      ],
+      "saved_draft_validation": null,
+      "duplicate": false,
+      "publication_status": "not_published",
+      "tool_errors": []
+    }
+  ],
+  "data_sha256": "35fcfd39ffae5d4ee65d8e6c0e2b95c68670a8a4132b678ccf4a09ef16e9d766",
+  "run_at": "2026-10-28T06:17:53.938911+00:00",
+  "elapsed_seconds": 2.478,
+  "limitation": null
+}

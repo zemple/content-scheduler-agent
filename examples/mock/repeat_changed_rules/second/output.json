@@ -1,0 +1,62 @@
+{
+  "request_id": "repeat_changed_rules-001",
+  "mode": "mock",
+  "model": "offline-fixed-policy-v1",
+  "task_status": "blocked",
+  "termination": "finished",
+  "steps": 3,
+  "max_steps": 12,
+  "items": [
+    {
+      "material_id": "M01",
+      "status": "blocked",
+      "review_status": "blocked",
+      "risk_reasons": [
+        {
+          "code": "unsupported_claim",
+          "severity": "block",
+          "reason": "效率提升80%"
+        }
+      ],
+      "missing_fields": [],
+      "requested_time": "2026-11-01T11:00:00+00:00",
+      "hard_time": true,
+      "suggested_time": "2026-11-01T11:00:00+00:00",
+      "pending_items": [],
+      "draft_status": "saved",
+      "draft_id": "D-d2b365e3753947e1",
+      "confirmation_status": "needs_revalidation",
+      "uncompleted_reasons": [
+        "saved_material_no_longer_approved"
+      ],
+      "saved_draft_validation": {
+        "source": "final_safety_recheck",
+        "valid": false,
+        "problems": [
+          "saved_material_no_longer_approved"
+        ],
+        "review": {
+          "ok": true,
+          "material_id": "M01",
+          "review_status": "blocked",
+          "missing_fields": [],
+          "risks": [
+            {
+              "code": "unsupported_claim",
+              "severity": "block",
+              "reason": "效率提升80%"
+            }
+          ],
+          "rule_version": "synthetic-2026-10-28-v1"
+        }
+      },
+      "duplicate": false,
+      "publication_status": "not_published",
+      "tool_errors": []
+    }
+  ],
+  "data_sha256": "db924aa9c572eb6b5e8c927ea105fce5f0616e3a46e6fc641b30d251ccb0ff6d",
+  "run_at": "2026-10-28T06:17:44.317308+00:00",
+  "elapsed_seconds": 0.0,
+  "limitation": "Mock verifies workflow only, not real model decisions."
+}

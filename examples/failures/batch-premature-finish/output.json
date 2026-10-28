@@ -1,0 +1,63 @@
+{
+  "request_id": "batch-001",
+  "mode": "live",
+  "model": "gpt-4.1-mini",
+  "task_status": "partial",
+  "termination": "finished",
+  "steps": 5,
+  "max_steps": 20,
+  "items": [
+    {
+      "material_id": "M01",
+      "status": "incomplete",
+      "review_status": "approved",
+      "risk_reasons": [],
+      "missing_fields": [],
+      "requested_time": "2026-11-01T11:00:00+00:00",
+      "hard_time": true,
+      "suggested_time": null,
+      "pending_items": [],
+      "draft_status": "not_saved",
+      "draft_id": null,
+      "confirmation_status": "not_confirmed",
+      "uncompleted_reasons": [
+        "model_stopped_without_save"
+      ],
+      "saved_draft_validation": null,
+      "duplicate": false,
+      "publication_status": "not_published",
+      "tool_errors": []
+    },
+    {
+      "material_id": "M03",
+      "status": "blocked",
+      "review_status": "blocked",
+      "risk_reasons": [
+        {
+          "code": "unsupported_claim",
+          "severity": "block",
+          "reason": "效率提升80%"
+        }
+      ],
+      "missing_fields": [],
+      "requested_time": "2026-11-01T10:00:00+00:00",
+      "hard_time": true,
+      "suggested_time": null,
+      "pending_items": [],
+      "draft_status": "not_saved",
+      "draft_id": null,
+      "confirmation_status": "not_confirmed",
+      "uncompleted_reasons": [
+        "review_blocked"
+      ],
+      "saved_draft_validation": null,
+      "duplicate": false,
+      "publication_status": "not_published",
+      "tool_errors": []
+    }
+  ],
+  "data_sha256": "35fcfd39ffae5d4ee65d8e6c0e2b95c68670a8a4132b678ccf4a09ef16e9d766",
+  "run_at": "2026-10-28T06:15:58.446189+00:00",
+  "elapsed_seconds": 4.244,
+  "limitation": null
+}

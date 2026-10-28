@@ -1,0 +1,1 @@
+{"step": 1, "tool": "read_material", "arguments": {"material_id": "M01"}, "reason": "离线策略：读取素材元数据。", "observation": {"ok": true, "material_id": "M01", "material": {"title": "字幕功能演示", "channel": "video", "rights_confirmed": true, "claims": ["支持字幕"], "tags": []}}, "model_metadata": {}, "result_summary": "ok", "next_action": "stop:step_limit"}

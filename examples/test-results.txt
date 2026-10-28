@@ -1,0 +1,56 @@
+test_invalid_model_config (test_agent.APITests.test_invalid_model_config) ... ok
+test_native_function_call_and_tool_observation_round_trip (test_agent.APITests.test_native_function_call_and_tool_observation_round_trip) ... ok
+test_changed_material_channel_invalidates_historical_draft (test_agent.LoopTests.test_changed_material_channel_invalidates_historical_draft) ... ok
+test_changed_occupancy_changes_suggestion (test_agent.LoopTests.test_changed_occupancy_changes_suggestion) ... ok
+test_conflict_changes_action_and_requires_confirmation (test_agent.LoopTests.test_conflict_changes_action_and_requires_confirmation) ... ok
+test_early_finish_cannot_forge_saved_status (test_agent.LoopTests.test_early_finish_cannot_forge_saved_status) ... ok
+test_limit_has_explicit_status (test_agent.LoopTests.test_limit_has_explicit_status) ... ok
+test_malformed_tool_name_is_model_error (test_agent.LoopTests.test_malformed_tool_name_is_model_error) ... ok
+test_missing_and_blocked (test_agent.LoopTests.test_missing_and_blocked) ... ok
+test_model_exception_is_reported (test_agent.LoopTests.test_model_exception_is_reported) ... ok
+test_model_observes_previous_result (test_agent.LoopTests.test_model_observes_previous_result) ... ok
+test_multi_material_keeps_successful_result (test_agent.LoopTests.test_multi_material_keeps_successful_result) ... ok
+test_no_slot_explains_checked_window (test_agent.LoopTests.test_no_slot_explains_checked_window) ... ok
+test_normal (test_agent.LoopTests.test_normal) ... ok
+test_read_failure_is_visible (test_agent.LoopTests.test_read_failure_is_visible) ... ok
+test_save_failure_is_not_completed (test_agent.LoopTests.test_save_failure_is_not_completed) ... ok
+test_save_failure_recovery_is_observed (test_agent.LoopTests.test_save_failure_recovery_is_observed) ... ok
+test_saved_draft_revalidated_when_policy_changes (test_agent.LoopTests.test_saved_draft_revalidated_when_policy_changes) ... ok
+test_saved_draft_revalidated_when_schedule_changes (test_agent.LoopTests.test_saved_draft_revalidated_when_schedule_changes) ... ok
+test_two_pending_proposals_in_one_request_do_not_collide (test_agent.LoopTests.test_two_pending_proposals_in_one_request_do_not_collide) ... ok
+test_unsaved_alternative_preserves_confirmation_boundary (test_agent.LoopTests.test_unsaved_alternative_preserves_confirmation_boundary) ... ok
+test_business_needs_input_exit (test_cli.CLITests.test_business_needs_input_exit) ... ok
+test_failure_exit_and_artifacts (test_cli.CLITests.test_failure_exit_and_artifacts) ... ok
+test_invalid_input_exits_cleanly (test_cli.CLITests.test_invalid_input_exits_cleanly) ... ok
+test_limit_exit (test_cli.CLITests.test_limit_exit) ... ok
+test_mock_cli_and_duplicate_across_processes (test_cli.CLITests.test_mock_cli_and_duplicate_across_processes) ... ok
+test_concurrent_slot_save_only_one_wins (test_scheduler.BusinessTests.test_concurrent_slot_save_only_one_wins) ... ok
+test_conflict_returns_alternative (test_scheduler.BusinessTests.test_conflict_returns_alternative) ... ok
+test_duplicate_after_new_external_conflict_not_success (test_scheduler.BusinessTests.test_duplicate_after_new_external_conflict_not_success) ... ok
+test_flexible_time_can_change (test_scheduler.BusinessTests.test_flexible_time_can_change) ... ok
+test_hard_change_pending_does_not_reserve (test_scheduler.BusinessTests.test_hard_change_pending_does_not_reserve) ... ok
+test_human_review_only_saves_pending (test_scheduler.BusinessTests.test_human_review_only_saves_pending) ... ok
+test_idempotency_survives_new_process_connection (test_scheduler.BusinessTests.test_idempotency_survives_new_process_connection) ... ok
+test_invalid_requests (test_scheduler.BusinessTests.test_invalid_requests) ... ok
+test_missing_info_cannot_save (test_scheduler.BusinessTests.test_missing_info_cannot_save) ... ok
+test_missing_info_is_not_approved (test_scheduler.BusinessTests.test_missing_info_is_not_approved) ... ok
+test_model_cannot_forge_confirmation (test_scheduler.BusinessTests.test_model_cannot_forge_confirmation) ... ok
+test_non_hour_slot_rejected (test_scheduler.BusinessTests.test_non_hour_slot_rejected) ... ok
+test_normal_save_persists_confirmed_draft (test_scheduler.BusinessTests.test_normal_save_persists_confirmed_draft) ... ok
+test_occupied_time_cannot_save_even_pending (test_scheduler.BusinessTests.test_occupied_time_cannot_save_even_pending) ... ok
+test_rule_block (test_scheduler.BusinessTests.test_rule_block) ... ok
+test_same_id_different_request_rejected (test_scheduler.BusinessTests.test_same_id_different_request_rejected) ... ok
+test_same_request_new_suggestion_cannot_overwrite (test_scheduler.BusinessTests.test_same_request_new_suggestion_cannot_overwrite) ... ok
+test_save_failure_has_no_database_row (test_scheduler.BusinessTests.test_save_failure_has_no_database_row) ... ok
+test_save_rechecks_after_query (test_scheduler.BusinessTests.test_save_rechecks_after_query) ... ok
+test_slot_window_overflow_is_tool_error (test_scheduler.BusinessTests.test_slot_window_overflow_is_tool_error) ... ok
+test_timezone_conversion_overflow_is_validation_error (test_scheduler.BusinessTests.test_timezone_conversion_overflow_is_validation_error) ... ok
+test_timezone_equivalent_conflicts (test_scheduler.BusinessTests.test_timezone_equivalent_conflicts) ... ok
+test_unknown_material (test_scheduler.BusinessTests.test_unknown_material) ... ok
+test_unknown_tool_and_cross_request_material_rejected (test_scheduler.BusinessTests.test_unknown_tool_and_cross_request_material_rejected) ... ok
+test_user_confirmation_allows_changed_time (test_scheduler.BusinessTests.test_user_confirmation_allows_changed_time) ... ok
+
+----------------------------------------------------------------------
+Ran 51 tests in 1.058s
+
+OK

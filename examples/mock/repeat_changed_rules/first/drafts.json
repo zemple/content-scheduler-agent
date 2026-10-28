@@ -1,0 +1,13 @@
+[
+  {
+    "draft_id": "D-d2b365e3753947e1",
+    "request_id": "repeat_changed_rules-001",
+    "material_id": "M01",
+    "requested_time": "2026-11-01T11:00:00+00:00",
+    "suggested_time": "2026-11-01T11:00:00+00:00",
+    "channel": "video",
+    "confirmation_status": "confirmed",
+    "pending_items": [],
+    "publication_status": "not_published"
+  }
+]

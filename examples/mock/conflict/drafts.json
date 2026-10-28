@@ -1,0 +1,15 @@
+[
+  {
+    "draft_id": "D-5be15608956648a5",
+    "request_id": "conflict-001",
+    "material_id": "M01",
+    "requested_time": "2026-11-01T10:00:00+00:00",
+    "suggested_time": "2026-11-01T11:00:00+00:00",
+    "channel": "video",
+    "confirmation_status": "pending",
+    "pending_items": [
+      "time_change"
+    ],
+    "publication_status": "not_published"
+  }
+]

@@ -1,0 +1,44 @@
+{
+  "M01": {
+    "title": "字幕功能演示",
+    "channel": "video",
+    "rights_confirmed": true,
+    "claims": [
+      "效率提升80%"
+    ],
+    "tags": []
+  },
+  "M02": {
+    "title": "待补充版权证明",
+    "channel": "video",
+    "claims": [],
+    "tags": []
+  },
+  "M03": {
+    "title": "需阻断的宣传素材",
+    "channel": "video",
+    "rights_confirmed": true,
+    "claims": [
+      "效率提升80%"
+    ],
+    "tags": []
+  },
+  "M04": {
+    "title": "活动合作素材",
+    "channel": "video",
+    "rights_confirmed": true,
+    "claims": [],
+    "tags": [
+      "sponsored"
+    ]
+  },
+  "M05": {
+    "title": "第二份字幕演示",
+    "channel": "video",
+    "rights_confirmed": true,
+    "claims": [
+      "支持字幕"
+    ],
+    "tags": []
+  }
+}

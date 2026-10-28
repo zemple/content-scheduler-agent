@@ -1,0 +1,17 @@
+{
+  "exit_code": 0,
+  "mode": "live",
+  "max_steps": 12,
+  "injected_failure": null,
+  "input": "input.json",
+  "data": "data/",
+  "database_rows": 1,
+  "stderr": "",
+  "model_response_ids": [
+    "chatcmpl-EdrHKOsX8xlQIBziPBig55rfzLxBQ",
+    "chatcmpl-EdrHLWTycOwRPcIsWzs2NwcOyXEe2",
+    "chatcmpl-EdrHMWIafbg3veiGrktYP4cofyXqS",
+    "chatcmpl-EdrHNq0dkuXYMIFxbhF0cm5isZOnw",
+    "chatcmpl-EdrHOA9nEPPpvQel5j1le4QKBVsb8"
+  ]
+}

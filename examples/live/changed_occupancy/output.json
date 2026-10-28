@@ -1,0 +1,48 @@
+{
+  "request_id": "changed_occupancy-001",
+  "mode": "live",
+  "model": "gpt-4.1-mini",
+  "task_status": "awaiting_confirmation",
+  "termination": "finished",
+  "steps": 6,
+  "max_steps": 12,
+  "items": [
+    {
+      "material_id": "M01",
+      "status": "awaiting_confirmation",
+      "review_status": "approved",
+      "risk_reasons": [],
+      "missing_fields": [],
+      "requested_time": "2026-11-01T10:00:00+00:00",
+      "hard_time": true,
+      "suggested_time": "2026-11-01T12:00:00+00:00",
+      "pending_items": [
+        "time_change"
+      ],
+      "draft_status": "saved",
+      "draft_id": "D-51d3c13c9eec4950",
+      "confirmation_status": "pending",
+      "uncompleted_reasons": [],
+      "saved_draft_validation": {
+        "source": "final_safety_recheck",
+        "valid": true,
+        "problems": [],
+        "review": {
+          "ok": true,
+          "material_id": "M01",
+          "review_status": "approved",
+          "missing_fields": [],
+          "risks": [],
+          "rule_version": "synthetic-2026-10-28-v1"
+        }
+      },
+      "duplicate": false,
+      "publication_status": "not_published",
+      "tool_errors": []
+    }
+  ],
+  "data_sha256": "b20cf1dc91d04b4ae3d26c80414698554f8ec920e9b6521101ef2326cfb53af1",
+  "run_at": "2026-10-28T06:18:22.294538+00:00",
+  "elapsed_seconds": 5.058,
+  "limitation": null
+}

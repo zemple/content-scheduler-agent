@@ -1,0 +1,25 @@
+{
+  "exit_code": 0,
+  "mode": "live",
+  "max_steps": 20,
+  "injected_failure": null,
+  "input": "input.json",
+  "data": "data/",
+  "database_rows": 2,
+  "stderr": "",
+  "model_response_ids": [
+    "chatcmpl-EdrHuA0Saj6NvPFVdzzrCsCabPaAz",
+    "chatcmpl-EdrHvMabSPzIqK16XCstf9TUrJoLk",
+    "chatcmpl-EdrHv9sUe9m2A14wtanAwVB7DUCgn",
+    "chatcmpl-EdrHwpOuaPcrjLYwNiYephkLrrQjp",
+    "chatcmpl-EdrHxydR421AZFdLIFNKJv8GK8BDT",
+    "chatcmpl-EdrHy1WCk2zYRHU693vBGCUN7aIsD",
+    "chatcmpl-EdrHz5ubYUDCPq4tlRRLMrqsfh4sB",
+    "chatcmpl-EdrHzf2QcFDFRYd9ktruREkn0DMM5",
+    "chatcmpl-EdrI0mJClZJock7UjMIctHDBJa1lt",
+    "chatcmpl-EdrI10IkxuNMKxWG0gl8Ym90BGigM",
+    "chatcmpl-EdrI2JpfWZjT7lgsiTlfI5Utr7ZJi",
+    "chatcmpl-EdrI3IH2TfezPOaoejB6t7kNG3zj3",
+    "chatcmpl-EdrI4cwj0bXiKbRSnzZhIaIaFVdSv"
+  ]
+}

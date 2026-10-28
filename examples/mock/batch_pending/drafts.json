@@ -1,0 +1,28 @@
+[
+  {
+    "draft_id": "D-8b82ce76d9af4804",
+    "request_id": "batch_pending-001",
+    "material_id": "M01",
+    "requested_time": "2026-11-01T10:00:00+00:00",
+    "suggested_time": "2026-11-01T11:00:00+00:00",
+    "channel": "video",
+    "confirmation_status": "pending",
+    "pending_items": [
+      "time_change"
+    ],
+    "publication_status": "not_published"
+  },
+  {
+    "draft_id": "D-0fccd475b6234e56",
+    "request_id": "batch_pending-001",
+    "material_id": "M05",
+    "requested_time": "2026-11-01T10:00:00+00:00",
+    "suggested_time": "2026-11-01T12:00:00+00:00",
+    "channel": "video",
+    "confirmation_status": "pending",
+    "pending_items": [
+      "time_change"
+    ],
+    "publication_status": "not_published"
+  }
+]

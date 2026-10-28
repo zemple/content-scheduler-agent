@@ -1,0 +1,7 @@
+{
+  "version": "synthetic-2026-10-28-v1",
+  "required_fields": ["title", "channel", "rights_confirmed"],
+  "channels": ["video", "social"],
+  "blocked_claims": ["效率提升80%", "保证收益", "100%安全"],
+  "manual_review_tags": ["sponsored"]
+}

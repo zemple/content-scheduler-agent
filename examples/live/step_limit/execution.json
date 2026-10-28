@@ -1,0 +1,13 @@
+{
+  "exit_code": 3,
+  "mode": "live",
+  "max_steps": 1,
+  "injected_failure": null,
+  "input": "input.json",
+  "data": "data/",
+  "database_rows": 0,
+  "stderr": "",
+  "model_response_ids": [
+    "chatcmpl-EdrHYwdszuR0FoNssN1xTm0LaFEAK"
+  ]
+}

@@ -1,0 +1,15 @@
+[
+  {
+    "draft_id": "D-409e674fdb524a10",
+    "request_id": "manual_review-001",
+    "material_id": "M04",
+    "requested_time": "2026-11-01T11:00:00+00:00",
+    "suggested_time": "2026-11-01T11:00:00+00:00",
+    "channel": "video",
+    "confirmation_status": "pending",
+    "pending_items": [
+      "manual_review"
+    ],
+    "publication_status": "not_published"
+  }
+]

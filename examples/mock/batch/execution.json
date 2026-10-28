@@ -1,0 +1,11 @@
+{
+  "exit_code": 3,
+  "mode": "mock",
+  "max_steps": 20,
+  "injected_failure": null,
+  "input": "input.json",
+  "data": "data/",
+  "database_rows": 1,
+  "stderr": "",
+  "model_response_ids": []
+}

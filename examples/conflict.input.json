@@ -1,0 +1,4 @@
+{
+  "request_id": "conflict-001",
+  "items": [{"material_id": "M01", "requested_time": "2026-11-01T18:00:00+08:00", "hard_time": true}]
+}

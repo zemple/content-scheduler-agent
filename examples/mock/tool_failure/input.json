@@ -1,0 +1,11 @@
+{
+  "request_id": "tool_failure-001",
+  "items": [
+    {
+      "material_id": "M01",
+      "requested_time": "2026-11-01T10:00:00+00:00",
+      "hard_time": true
+    }
+  ],
+  "confirmations": {}
+}

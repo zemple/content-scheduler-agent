@@ -1,0 +1,11 @@
+[
+  {
+    "channel": "video",
+    "time": "2026-11-01T18:00:00+08:00",
+    "material_id": "EXISTING-01"
+  },
+  {
+    "channel": "video",
+    "time": "2026-11-01T19:00:00+08:00"
+  }
+]
