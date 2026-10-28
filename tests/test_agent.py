@@ -133,6 +133,36 @@ class LoopTests(unittest.TestCase):
         self.assertEqual(result['items'][0]['draft_status'], 'not_saved')
         self.assertEqual(result['items'][0]['publication_status'], 'not_published')
 
+    def test_premature_finish_returns_observation_then_model_can_continue(self):
+        m=ScriptedModel([
+            Action('check_rules',{'material_id':'M01'},'Check rules'),
+            Action('finish',{},'Other material blocked, stop too early'),
+            Action('query_slots',{'material_id':'M01','start_time':ALT,'count':1},'Observe unfinished item and query slot'),
+            Action('save_draft',{'material_id':'M01','suggested_time':ALT},'Save pending proposal'),
+            Action('finish',{},'All feasible work done')])
+        result,trace=self.run_agent(model=m)
+        self.assertFalse(trace[1]['observation']['ok'])
+        self.assertEqual(trace[1]['observation']['error'],'premature_finish')
+        self.assertEqual(m.seen[2][1]['observation']['unfinished_materials'],['M01'])
+        self.assertEqual(result['items'][0]['draft_status'],'saved')
+
+    def test_finish_uses_latest_slot_observation(self):
+        from scheduling_agent.domain import Request
+        self.world['schedule']=[]
+        req=Request.parse({'request_id':'slot-changed','items':[
+            {'material_id':'M01','requested_time':ALT,'hard_time':False,'not_before':ALT,'not_after':ALT},
+            {'material_id':'M05','requested_time':ALT,'hard_time':False}]})
+        m=ScriptedModel([
+            Action('check_rules',{'material_id':'M01'},'Check'),
+            Action('query_slots',{'material_id':'M01','start_time':ALT,'count':1},'Inspect'),
+            Action('save_draft',{'material_id':'M05','suggested_time':ALT},'Another item takes slot'),
+            Action('query_slots',{'material_id':'M01','start_time':ALT,'count':1},'Recheck unavailable'),
+            Action('finish',{},'No remaining permitted slot')])
+        result,trace=self.run_agent(req,model=m,max_steps=5)
+        self.assertEqual(result['termination'],'finished')
+        self.assertTrue(trace[-1]['observation']['ok'])
+        self.assertIsNone(result['items'][0]['suggested_time'])
+
     def test_model_exception_is_reported(self):
         class Broken(ScriptedModel):
             def decide(self, req, events):
@@ -211,6 +241,11 @@ class APITests(unittest.TestCase):
             self.assertEqual(messages[-1]['role'], 'tool')
             self.assertEqual(json.loads(messages[-1]['content'])['material']['title'], 'changed')
             self.assertEqual(messages[-1]['tool_call_id'], messages[-2]['tool_calls'][0]['id'])
+            events.append({'step':2,'tool':'finish','arguments':{},'reason':second.reason,
+                           'observation':{'ok':False,'error':'premature_finish','unfinished_materials':['M01']},
+                           'model_metadata':second.metadata})
+            m.decide(request(), events)
+            self.assertEqual(json.loads(bodies[-1]['messages'][-1]['content'])['error'],'premature_finish')
         finally:
             server.shutdown()
             server.server_close()

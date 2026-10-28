@@ -1,6 +1,6 @@
 [
   {
-    "draft_id": "D-8b82ce76d9af4804",
+    "draft_id": "D-155a4e48c8374562",
     "request_id": "batch_pending-001",
     "material_id": "M01",
     "requested_time": "2026-11-01T10:00:00+00:00",
@@ -13,7 +13,7 @@
     "publication_status": "not_published"
   },
   {
-    "draft_id": "D-0fccd475b6234e56",
+    "draft_id": "D-0f6d18201b524502",
     "request_id": "batch_pending-001",
     "material_id": "M05",
     "requested_time": "2026-11-01T10:00:00+00:00",

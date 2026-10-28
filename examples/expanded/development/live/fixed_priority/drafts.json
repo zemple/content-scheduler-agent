@@ -1,0 +1,24 @@
+[
+  {
+    "draft_id": "D-8162e37938f843cc",
+    "request_id": "fixed_priority-v2",
+    "material_id": "M05",
+    "requested_time": "2026-11-06T10:00:00+00:00",
+    "suggested_time": "2026-11-06T11:00:00+00:00",
+    "channel": "video",
+    "confirmation_status": "confirmed",
+    "pending_items": [],
+    "publication_status": "not_published"
+  },
+  {
+    "draft_id": "D-e1cd1a408ac744c7",
+    "request_id": "fixed_priority-v2",
+    "material_id": "M06",
+    "requested_time": "2026-11-06T10:00:00+00:00",
+    "suggested_time": "2026-11-06T10:00:00+00:00",
+    "channel": "video",
+    "confirmation_status": "confirmed",
+    "pending_items": [],
+    "publication_status": "not_published"
+  }
+]

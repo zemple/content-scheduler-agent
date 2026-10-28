@@ -1,0 +1,13 @@
+[
+  {
+    "draft_id": "D-0d87592e75c94a3d",
+    "request_id": "window_deadline-v2",
+    "material_id": "M07",
+    "requested_time": "2026-11-06T10:00:00+00:00",
+    "suggested_time": "2026-11-06T11:00:00+00:00",
+    "channel": "video",
+    "confirmation_status": "confirmed",
+    "pending_items": [],
+    "publication_status": "not_published"
+  }
+]

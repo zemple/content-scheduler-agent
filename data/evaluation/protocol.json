@@ -1,0 +1,9 @@
+{
+  "freeze_at": "2026-10-28T19:13:09.324865+00:00",
+  "business_source_sha256": "a913c48a9baa315ea7cc13e09e095993b3756faf0fe89917439c408cf54a8b0e",
+  "validation_suite_sha256": "eb4e2dee61026400873bab8bd79e8c56907f4b1d2a4f453b617980cd29dc1744",
+  "first_validation_source_sha256": "891a3a49464bd47dcf3103d20d53f7b023b6ad1dad097041f48731183c3e0043",
+  "first_validation_result": "3/3 live and mock passed before a later runtime finish guard fix derived from the baseline batch failure.",
+  "policy": "Final validation is a regression rerun of the fixed retained cases; not a fresh blind holdout. No validation outcome was used to tune prompts. Source and prompt are frozen for these final runs.",
+  "final_freeze_at": "2026-10-28T19:15:00.672846+00:00"
+}

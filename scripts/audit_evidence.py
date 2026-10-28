@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 
 from reproduce import CASES
+from evaluate_expanded import check_case, source_hash
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -66,6 +67,26 @@ def audit():
     if manifest.exists():
         for relative, digest in read(manifest)['source_sha256'].items():
             assert hashlib.sha256((ROOT / relative).read_bytes()).hexdigest() == digest, relative
+    for suite in ('development','validation'):
+        suite_file = ROOT / 'data/evaluation' / (suite + '.json')
+        source = source_hash()
+        cases = read(suite_file)
+        for mode in ('mock','live'):
+            base = ROOT / 'examples/expanded' / suite / mode
+            summary = read(base/'summary.json')
+            assert summary['source_sha256'] == source, 'expanded source differs from evaluated source'
+            assert summary['suite_sha256'] == hashlib.sha256(suite_file.read_bytes()).hexdigest()
+            assert summary['all_passed'] and {r['case'] for r in summary['cases']} == {c['name'] for c in cases}
+            for case in cases:
+                folder = base / case['name']
+                outcome = check_case(folder)
+                assert outcome['passed'], (suite,mode,case['name'],outcome)
+                assert read(folder/'execution.json')['source_sha256'] == source
+                checks_peer = ROOT / 'examples/expanded' / suite / ('live' if mode=='mock' else 'mock') / case['name']
+                assert read(folder/'input.json') == read(checks_peer/'input.json')
+                for n in ('materials','rules','schedule'):
+                    assert read(folder/'data'/f'{n}.json') == read(checks_peer/'data'/f'{n}.json')
+                checked += 1
     print(f'PASS: {checked} actual execution records; data hashes, statuses, traces, drafts and idempotency checked.')
 
 

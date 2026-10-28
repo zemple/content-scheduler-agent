@@ -1,7 +1,152 @@
 {
-  "M01": {"title": "字幕功能演示", "channel": "video", "rights_confirmed": true, "claims": ["支持字幕"], "tags": []},
-  "M02": {"title": "待补充版权证明", "channel": "video", "claims": [], "tags": []},
-  "M03": {"title": "需阻断的宣传素材", "channel": "video", "rights_confirmed": true, "claims": ["效率提升80%"], "tags": []},
-  "M04": {"title": "活动合作素材", "channel": "video", "rights_confirmed": true, "claims": [], "tags": ["sponsored"]},
-  "M05": {"title": "第二份字幕演示", "channel": "video", "rights_confirmed": true, "claims": ["支持字幕"], "tags": []}
+  "M01": {
+    "title": "字幕功能演示",
+    "channel": "video",
+    "rights_confirmed": true,
+    "claims": [
+      "支持字幕"
+    ],
+    "tags": []
+  },
+  "M02": {
+    "title": "待补充版权证明",
+    "channel": "video",
+    "claims": [],
+    "tags": []
+  },
+  "M03": {
+    "title": "需阻断的宣传素材",
+    "channel": "video",
+    "rights_confirmed": true,
+    "claims": [
+      "效率提升80%"
+    ],
+    "tags": []
+  },
+  "M04": {
+    "title": "活动合作素材",
+    "channel": "video",
+    "rights_confirmed": true,
+    "claims": [],
+    "tags": [
+      "sponsored"
+    ]
+  },
+  "M05": {
+    "title": "第二份字幕演示",
+    "channel": "video",
+    "rights_confirmed": true,
+    "claims": [
+      "支持字幕"
+    ],
+    "tags": []
+  },
+  "M06": {
+    "title": "新品直播预告",
+    "channel": "video",
+    "claims": [],
+    "tags": [],
+    "rights_confirmed": true
+  },
+  "M07": {
+    "title": "产品操作教程",
+    "channel": "video",
+    "claims": [
+      "支持字幕"
+    ],
+    "tags": [],
+    "rights_confirmed": true
+  },
+  "M08": {
+    "title": "周末社区互动",
+    "channel": "community",
+    "claims": [],
+    "tags": [],
+    "rights_confirmed": true
+  },
+  "M09": {
+    "title": "新品海报",
+    "channel": "social",
+    "claims": [],
+    "tags": [],
+    "rights_confirmed": true
+  },
+  "M10": {
+    "title": "待授权用户投稿",
+    "channel": "community",
+    "claims": [],
+    "tags": [],
+    "rights_confirmed": false
+  },
+  "M11": {
+    "title": "新品幕后短片",
+    "channel": "video",
+    "claims": [],
+    "tags": [],
+    "rights_confirmed": true
+  },
+  "M12": {
+    "title": "限时活动提醒",
+    "channel": "social",
+    "claims": [],
+    "tags": [],
+    "rights_confirmed": true
+  },
+  "M13": {
+    "title": "合作测评预告",
+    "channel": "video",
+    "claims": [],
+    "tags": [
+      "sponsored"
+    ],
+    "rights_confirmed": true
+  },
+  "M14": {
+    "title": "社区问答预告",
+    "channel": "community",
+    "claims": [],
+    "tags": [],
+    "rights_confirmed": true
+  },
+  "M15": {
+    "title": "发布会总结",
+    "channel": "video",
+    "claims": [],
+    "tags": [],
+    "rights_confirmed": true
+  },
+  "M16": {
+    "title": "活动倒计时",
+    "channel": "social",
+    "claims": [],
+    "tags": [],
+    "rights_confirmed": true
+  },
+  "M17": {
+    "title": "社区周报",
+    "channel": "community",
+    "claims": [],
+    "tags": [],
+    "rights_confirmed": true
+  },
+  "M18": {
+    "title": "产品FAQ图文",
+    "channel": "social",
+    "claims": [],
+    "tags": [],
+    "rights_confirmed": true
+  },
+  "M19": {
+    "title": "二次剪辑待补资料",
+    "channel": "video",
+    "claims": [],
+    "tags": []
+  },
+  "M20": {
+    "title": "下一周内容预告",
+    "channel": "community",
+    "claims": [],
+    "tags": [],
+    "rights_confirmed": true
+  }
 }

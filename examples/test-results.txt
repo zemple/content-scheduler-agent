@@ -4,6 +4,7 @@ test_changed_material_channel_invalidates_historical_draft (test_agent.LoopTests
 test_changed_occupancy_changes_suggestion (test_agent.LoopTests.test_changed_occupancy_changes_suggestion) ... ok
 test_conflict_changes_action_and_requires_confirmation (test_agent.LoopTests.test_conflict_changes_action_and_requires_confirmation) ... ok
 test_early_finish_cannot_forge_saved_status (test_agent.LoopTests.test_early_finish_cannot_forge_saved_status) ... ok
+test_finish_uses_latest_slot_observation (test_agent.LoopTests.test_finish_uses_latest_slot_observation) ... ok
 test_limit_has_explicit_status (test_agent.LoopTests.test_limit_has_explicit_status) ... ok
 test_malformed_tool_name_is_model_error (test_agent.LoopTests.test_malformed_tool_name_is_model_error) ... ok
 test_missing_and_blocked (test_agent.LoopTests.test_missing_and_blocked) ... ok
@@ -12,6 +13,7 @@ test_model_observes_previous_result (test_agent.LoopTests.test_model_observes_pr
 test_multi_material_keeps_successful_result (test_agent.LoopTests.test_multi_material_keeps_successful_result) ... ok
 test_no_slot_explains_checked_window (test_agent.LoopTests.test_no_slot_explains_checked_window) ... ok
 test_normal (test_agent.LoopTests.test_normal) ... ok
+test_premature_finish_returns_observation_then_model_can_continue (test_agent.LoopTests.test_premature_finish_returns_observation_then_model_can_continue) ... ok
 test_read_failure_is_visible (test_agent.LoopTests.test_read_failure_is_visible) ... ok
 test_save_failure_is_not_completed (test_agent.LoopTests.test_save_failure_is_not_completed) ... ok
 test_save_failure_recovery_is_observed (test_agent.LoopTests.test_save_failure_recovery_is_observed) ... ok
@@ -24,6 +26,21 @@ test_failure_exit_and_artifacts (test_cli.CLITests.test_failure_exit_and_artifac
 test_invalid_input_exits_cleanly (test_cli.CLITests.test_invalid_input_exits_cleanly) ... ok
 test_limit_exit (test_cli.CLITests.test_limit_exit) ... ok
 test_mock_cli_and_duplicate_across_processes (test_cli.CLITests.test_mock_cli_and_duplicate_across_processes) ... ok
+test_earlier_permitted_and_query_distinguishes_constraints (test_constraints.ConstraintTests.test_earlier_permitted_and_query_distinguishes_constraints) ... ok
+test_explicit_time_confirmation_does_not_override_direction (test_constraints.ConstraintTests.test_explicit_time_confirmation_does_not_override_direction) ... ok
+test_final_recheck_includes_newly_viable_fixed_item (test_constraints.ConstraintTests.test_final_recheck_includes_newly_viable_fixed_item) ... ok
+test_flexible_item_cannot_take_other_items_fixed_slot (test_constraints.ConstraintTests.test_flexible_item_cannot_take_other_items_fixed_slot) ... ok
+test_hard_time_alternative_still_pending_within_window (test_constraints.ConstraintTests.test_hard_time_alternative_still_pending_within_window) ... ok
+test_invalid_constraints_rejected (test_constraints.ConstraintTests.test_invalid_constraints_rejected) ... ok
+test_mock_preserves_fixed_slot_even_flexible_item_listed_first (test_constraints.ConstraintTests.test_mock_preserves_fixed_slot_even_flexible_item_listed_first) ... ok
+test_mock_searches_earlier_instead_of_forbidden_later_slot (test_constraints.ConstraintTests.test_mock_searches_earlier_instead_of_forbidden_later_slot) ... ok
+test_new_dataset_has_20_materials_7_days_3_channels (test_constraints.ConstraintTests.test_new_dataset_has_20_materials_7_days_3_channels) ... ok
+test_only_earlier_rejects_free_later_time (test_constraints.ConstraintTests.test_only_earlier_rejects_free_later_time) ... ok
+test_only_later_rejects_earlier (test_constraints.ConstraintTests.test_only_later_rejects_earlier) ... ok
+test_rule_sensitive_request_fingerprint (test_constraints.ConstraintTests.test_rule_sensitive_request_fingerprint) ... ok
+test_same_time_different_channel_is_allowed (test_constraints.ConstraintTests.test_same_time_different_channel_is_allowed) ... ok
+test_search_at_datetime_boundary_returns_incomplete (test_constraints.ConstraintTests.test_search_at_datetime_boundary_returns_incomplete) ... ok
+test_window_inclusive_deadline_exclusive (test_constraints.ConstraintTests.test_window_inclusive_deadline_exclusive) ... ok
 test_concurrent_slot_save_only_one_wins (test_scheduler.BusinessTests.test_concurrent_slot_save_only_one_wins) ... ok
 test_conflict_returns_alternative (test_scheduler.BusinessTests.test_conflict_returns_alternative) ... ok
 test_duplicate_after_new_external_conflict_not_success (test_scheduler.BusinessTests.test_duplicate_after_new_external_conflict_not_success) ... ok
@@ -51,6 +68,6 @@ test_unknown_tool_and_cross_request_material_rejected (test_scheduler.BusinessTe
 test_user_confirmation_allows_changed_time (test_scheduler.BusinessTests.test_user_confirmation_allows_changed_time) ... ok
 
 ----------------------------------------------------------------------
-Ran 51 tests in 1.058s
+Ran 68 tests in 1.113s
 
 OK

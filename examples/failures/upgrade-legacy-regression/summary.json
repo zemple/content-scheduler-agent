@@ -1,0 +1,203 @@
+{
+  "mode": "live",
+  "started_at": "2026-10-28T19:06:50.398896+00:00",
+  "cases": [
+    {
+      "case": "normal",
+      "passed": true,
+      "expected_status": "completed",
+      "actual_status": "completed",
+      "steps": [
+        5
+      ],
+      "artifacts": "normal/",
+      "checks_passed": 5,
+      "checks_total": 5
+    },
+    {
+      "case": "missing",
+      "passed": true,
+      "expected_status": "needs_input",
+      "actual_status": "needs_input",
+      "steps": [
+        3
+      ],
+      "artifacts": "missing/",
+      "checks_passed": 5,
+      "checks_total": 5
+    },
+    {
+      "case": "risk",
+      "passed": true,
+      "expected_status": "blocked",
+      "actual_status": "blocked",
+      "steps": [
+        4
+      ],
+      "artifacts": "risk/",
+      "checks_passed": 5,
+      "checks_total": 5
+    },
+    {
+      "case": "conflict",
+      "passed": false,
+      "expected_status": "awaiting_confirmation",
+      "actual_status": "awaiting_confirmation",
+      "steps": [
+        6
+      ],
+      "artifacts": "conflict/",
+      "checks_passed": 5,
+      "checks_total": 6
+    },
+    {
+      "case": "duplicate",
+      "passed": true,
+      "expected_status": "completed",
+      "actual_status": "completed",
+      "steps": [
+        5,
+        5
+      ],
+      "artifacts": "duplicate/",
+      "checks_passed": 12,
+      "checks_total": 12
+    },
+    {
+      "case": "save_failure",
+      "passed": true,
+      "expected_status": "incomplete",
+      "actual_status": "incomplete",
+      "steps": [
+        7
+      ],
+      "artifacts": "save_failure/",
+      "checks_passed": 5,
+      "checks_total": 5
+    },
+    {
+      "case": "tool_failure",
+      "passed": true,
+      "expected_status": "incomplete",
+      "actual_status": "incomplete",
+      "steps": [
+        3
+      ],
+      "artifacts": "tool_failure/",
+      "checks_passed": 5,
+      "checks_total": 5
+    },
+    {
+      "case": "changed_occupancy",
+      "passed": false,
+      "expected_status": "awaiting_confirmation",
+      "actual_status": "awaiting_confirmation",
+      "steps": [
+        6
+      ],
+      "artifacts": "changed_occupancy/",
+      "checks_passed": 5,
+      "checks_total": 6
+    },
+    {
+      "case": "confirmed",
+      "passed": true,
+      "expected_status": "completed",
+      "actual_status": "completed",
+      "steps": [
+        5
+      ],
+      "artifacts": "confirmed/",
+      "checks_passed": 6,
+      "checks_total": 6
+    },
+    {
+      "case": "manual_review",
+      "passed": true,
+      "expected_status": "awaiting_confirmation",
+      "actual_status": "awaiting_confirmation",
+      "steps": [
+        5
+      ],
+      "artifacts": "manual_review/",
+      "checks_passed": 5,
+      "checks_total": 5
+    },
+    {
+      "case": "no_slots",
+      "passed": false,
+      "expected_status": "incomplete",
+      "actual_status": "awaiting_confirmation",
+      "steps": [
+        6
+      ],
+      "artifacts": "no_slots/",
+      "checks_passed": 3,
+      "checks_total": 5
+    },
+    {
+      "case": "step_limit",
+      "passed": true,
+      "expected_status": "incomplete",
+      "actual_status": "incomplete",
+      "steps": [
+        1
+      ],
+      "artifacts": "step_limit/",
+      "checks_passed": 5,
+      "checks_total": 5
+    },
+    {
+      "case": "batch",
+      "passed": true,
+      "expected_status": "partial",
+      "actual_status": "partial",
+      "steps": [
+        7
+      ],
+      "artifacts": "batch/",
+      "checks_passed": 5,
+      "checks_total": 5
+    },
+    {
+      "case": "repeat_changed_occupancy",
+      "passed": true,
+      "expected_status": "incomplete",
+      "actual_status": "incomplete",
+      "steps": [
+        5,
+        6
+      ],
+      "artifacts": "repeat_changed_occupancy/",
+      "checks_passed": 12,
+      "checks_total": 12
+    },
+    {
+      "case": "repeat_changed_rules",
+      "passed": true,
+      "expected_status": "blocked",
+      "actual_status": "blocked",
+      "steps": [
+        5,
+        3
+      ],
+      "artifacts": "repeat_changed_rules/",
+      "checks_passed": 12,
+      "checks_total": 12
+    },
+    {
+      "case": "batch_pending",
+      "passed": false,
+      "expected_status": "awaiting_confirmation",
+      "actual_status": "incomplete",
+      "steps": [
+        7
+      ],
+      "artifacts": "batch_pending/",
+      "checks_passed": 3,
+      "checks_total": 6
+    }
+  ],
+  "finished_at": "2026-10-28T19:08:13.648826+00:00",
+  "all_passed": false
+}

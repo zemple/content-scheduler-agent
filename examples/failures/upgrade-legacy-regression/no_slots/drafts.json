@@ -1,0 +1,15 @@
+[
+  {
+    "draft_id": "D-f15e2dff7a82480b",
+    "request_id": "no_slots-001",
+    "material_id": "M01",
+    "requested_time": "2026-11-01T10:00:00+00:00",
+    "suggested_time": "2026-11-01T09:00:00+00:00",
+    "channel": "video",
+    "confirmation_status": "pending",
+    "pending_items": [
+      "time_change"
+    ],
+    "publication_status": "not_published"
+  }
+]

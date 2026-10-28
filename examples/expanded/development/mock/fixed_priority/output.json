@@ -1,0 +1,82 @@
+{
+  "request_id": "fixed_priority-v2",
+  "mode": "mock",
+  "model": "offline-fixed-policy-v1",
+  "task_status": "completed",
+  "termination": "finished",
+  "steps": 10,
+  "max_steps": 24,
+  "items": [
+    {
+      "material_id": "M05",
+      "status": "completed",
+      "time_constraints": {
+        "not_before": "2026-11-06T10:00:00+00:00",
+        "not_after": "2026-11-06T12:00:00+00:00"
+      },
+      "review_status": "approved",
+      "risk_reasons": [],
+      "missing_fields": [],
+      "requested_time": "2026-11-06T10:00:00+00:00",
+      "hard_time": false,
+      "suggested_time": "2026-11-06T11:00:00+00:00",
+      "pending_items": [],
+      "draft_status": "saved",
+      "draft_id": "D-4a70e4eb6edd4a99",
+      "confirmation_status": "confirmed",
+      "uncompleted_reasons": [],
+      "saved_draft_validation": {
+        "source": "final_safety_recheck",
+        "valid": true,
+        "problems": [],
+        "review": {
+          "ok": true,
+          "material_id": "M05",
+          "review_status": "approved",
+          "missing_fields": [],
+          "risks": [],
+          "rule_version": "synthetic-2026-10-28-v1"
+        }
+      },
+      "duplicate": false,
+      "publication_status": "not_published",
+      "tool_errors": []
+    },
+    {
+      "material_id": "M06",
+      "status": "completed",
+      "time_constraints": {},
+      "review_status": "approved",
+      "risk_reasons": [],
+      "missing_fields": [],
+      "requested_time": "2026-11-06T10:00:00+00:00",
+      "hard_time": true,
+      "suggested_time": "2026-11-06T10:00:00+00:00",
+      "pending_items": [],
+      "draft_status": "saved",
+      "draft_id": "D-c0c7467332f24d00",
+      "confirmation_status": "confirmed",
+      "uncompleted_reasons": [],
+      "saved_draft_validation": {
+        "source": "final_safety_recheck",
+        "valid": true,
+        "problems": [],
+        "review": {
+          "ok": true,
+          "material_id": "M06",
+          "review_status": "approved",
+          "missing_fields": [],
+          "risks": [],
+          "rule_version": "synthetic-2026-10-28-v1"
+        }
+      },
+      "duplicate": false,
+      "publication_status": "not_published",
+      "tool_errors": []
+    }
+  ],
+  "data_sha256": "50632fea65b5c7ef4cdf504fa21a3eb0d72c10e4e7396dea76f03a60a7a98be1",
+  "run_at": "2026-10-28T19:15:02.373707+00:00",
+  "elapsed_seconds": 0.004,
+  "limitation": "Mock verifies workflow only, not real model decisions."
+}

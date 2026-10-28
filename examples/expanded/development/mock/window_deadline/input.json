@@ -1,0 +1,14 @@
+{
+  "request_id": "window_deadline-v2",
+  "items": [
+    {
+      "material_id": "M07",
+      "requested_time": "2026-11-06T10:00:00+00:00",
+      "hard_time": false,
+      "not_before": "2026-11-06T10:00:00+00:00",
+      "not_after": "2026-11-06T11:00:00+00:00",
+      "deadline": "2026-11-06T12:00:00+00:00"
+    }
+  ],
+  "confirmations": {}
+}

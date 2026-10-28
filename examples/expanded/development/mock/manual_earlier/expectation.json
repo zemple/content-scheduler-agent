@@ -1,0 +1,12 @@
+{
+  "status": "awaiting_confirmation",
+  "saved": 1,
+  "times": {
+    "M13": "2026-11-06T17:00:00+08:00"
+  },
+  "pending": {
+    "M13": [
+      "manual_review"
+    ]
+  }
+}

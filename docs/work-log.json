@@ -17,5 +17,22 @@
     "production identity authorization",
     "external platform synchronization",
     "UI/deployment"
-  ]
+  ],
+  "expanded_upgrade": {
+    "started_at": "2026-10-28T19:00:01.720901+00:00",
+    "start_basis": "creation of upgrade-plan.md; brief initial inspection precedes this checkpoint",
+    "local_validation_completed_at": "2026-10-28T19:17:38.583366+00:00",
+    "elapsed_seconds": 1057,
+    "materials": 20,
+    "schedule_entries": 64,
+    "date_days": 7,
+    "channels": 3,
+    "tests_passed": 68,
+    "scenarios_per_mode": 27,
+    "final_execution_records": 60,
+    "mock_passed": 27,
+    "live_passed": 27,
+    "validation_disclosure": "retained cases first passed before baseline-derived finish guard; final runs are regression reruns, not unseen blind evaluation",
+    "remaining": "GitHub upload/CI/archive verification after this local checkpoint; production features remain out of scope"
+  }
 }

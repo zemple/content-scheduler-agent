@@ -10,6 +10,7 @@
     {
       "material_id": "M01",
       "status": "blocked",
+      "time_constraints": {},
       "review_status": "blocked",
       "risk_reasons": [
         {
@@ -24,7 +25,7 @@
       "suggested_time": "2026-11-01T11:00:00+00:00",
       "pending_items": [],
       "draft_status": "saved",
-      "draft_id": "D-650f221364e94e97",
+      "draft_id": "D-bca268543cdf4ee5",
       "confirmation_status": "needs_revalidation",
       "uncompleted_reasons": [
         "saved_material_no_longer_approved"
@@ -55,8 +56,8 @@
       "tool_errors": []
     }
   ],
-  "data_sha256": "db924aa9c572eb6b5e8c927ea105fce5f0616e3a46e6fc641b30d251ccb0ff6d",
-  "run_at": "2026-10-28T06:18:58.069098+00:00",
-  "elapsed_seconds": 2.161,
+  "data_sha256": "3beb18f5fcdaf3bbf4117ff2c4e0874e3f8fba02bbf696b33f201b3f8ac57f71",
+  "run_at": "2026-10-28T19:16:30.710213+00:00",
+  "elapsed_seconds": 5.329,
   "limitation": null
 }

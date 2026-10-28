@@ -14,6 +14,8 @@
 
 先看 [真实模型冲突 Trace](examples/live/conflict/trace.jsonl)、[冲突结果](examples/live/conflict/output.json) 和 [真实模型验证汇总](examples/live/summary.json)。对比 [正常路径](examples/live/normal/trace.jsonl) 与 [更换占用时段后的路径](examples/live/changed_occupancy/trace.jsonl)。
 
+本次扩展到 **20条素材、64条已有排期、一周三个频道**。新增“只能提前/推迟、时间窗口、截止时间、固定素材优先”并在保存工具中强制检查。详见 [扩展排期说明](docs/advanced-scheduling.md)，以及 [只能提前的真实Trace](examples/expanded/development/live/earlier_only/trace.jsonl) 和 [固定素材优先Trace](examples/expanded/development/live/fixed_priority/trace.jsonl)。
+
 ## 环境和安装
 
 Python **3.11 或以上**，Windows/macOS/Linux。运行和测试没有第三方依赖；联网模式需支持 Chat Completions 原生 function calling 的模型接口。本次实际使用模型名称及响应 ID 记录在 live Trace 中。
@@ -78,6 +80,8 @@ python -m scheduling_agent run --mode live \
 
 `confirmations` 代表运行 CLI 的用户明确同意这个素材的这个替代时段；模型没有写入确认的工具。没有该字段时，改变硬性时间只能保存待确认建议。`hard_time=false` 表示用户允许调整；不代表能绕过规则风险。人工审核风险始终保留 `manual_review`，本项目不实现人工审核通过接口。
 
+每项素材还支持可选 `adjustment`（`earlier_only`/`later_only`/`either`）、`not_before`、`not_after`、`deadline`。前两个窗口边界包含，deadline必须严格早于；这些条件不能通过时间确认绕过。自然语言要求目前需由操作者录入为这些结构化字段，没有自动解析器。
+
 合成规则规定：每频道每小时一个时段，时间必须带时区并对应 UTC 整点；同一批次的待确认建议不能互相冲突。待确认建议不占用其他请求的时段，所以后续明确确认仍需重新检查。`confirmed` 仅表示草稿的确认状态，绝不表示已发布。
 
 ## 测试与复现
@@ -88,6 +92,10 @@ python -m unittest discover -s tests -v
 # 输出路径必须尚不存在，避免覆盖证据
 python scripts/reproduce.py --mode mock --output runs/reproduced-mock
 python scripts/reproduce.py --mode live --output runs/reproduced-live
+
+# 更复杂的时间约束和批量竞争；验证组单独执行
+python scripts/evaluate_expanded.py --mode live --suite development --output runs/expanded-dev
+python scripts/evaluate_expanded.py --mode live --suite validation --output runs/expanded-validation
 
 # 只复现指定场景
 python scripts/reproduce.py --mode live --cases normal,conflict,save_failure \
@@ -116,6 +124,7 @@ tests/                业务不变量、循环、HTTP 协议、跨进程 CLI 测
 data/                 合成素材、审核规则、已有排期
 examples/mock/        离线实际运行记录
 examples/live/        真实 API 实际运行记录和汇总
+examples/expanded/    复杂时间约束的开发/验证组，分别保存 mock/live
 examples/failures/    改进前真实失败记录，保留用于复盘
 scripts/              批量复现、记录一致性检查
 docs/                 五份指定文档、设计与实施记录
@@ -126,3 +135,5 @@ docs/                 五份指定文档、设计与实施记录
 不接真实发布、外部素材平台、生产审核或用户认证。数据文件每次启动读取为一个快照，不热加载；SQLite 草稿占位在查询/保存时实时检查。输入授权基于本地 CLI 用户，不是生产身份认证。模型可能过早停止，程序会如实标记未完成，单次通过不代表泛化成功率。完整限制见评估文档。
 
 提交题号 1、GitHub 仓库 URL 及 `git rev-parse HEAD` 的完整 SHA。最终 SHA 在提交后提供，不把待生成的 SHA 写成已完成。实际自动化协作用时记录见 [work-log.json](docs/work-log.json)；候选人独立理解和修改用时须另行如实记录。
+
+当前增强版本的测试与通过数见docs/03-evaluation.md和examples/test-results.txt。保留验证组在基线结束保护修复后有回归复测，未声称最终是未见盲测；详细过程可查data/evaluation/protocol.json。

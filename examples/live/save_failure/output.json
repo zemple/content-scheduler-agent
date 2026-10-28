@@ -4,18 +4,19 @@
   "model": "gpt-4.1-mini",
   "task_status": "incomplete",
   "termination": "finished",
-  "steps": 7,
+  "steps": 9,
   "max_steps": 12,
   "items": [
     {
       "material_id": "M01",
       "status": "incomplete",
+      "time_constraints": {},
       "review_status": "approved",
       "risk_reasons": [],
       "missing_fields": [],
       "requested_time": "2026-11-01T10:00:00+00:00",
       "hard_time": true,
-      "suggested_time": "2026-11-01T11:00:00+00:00",
+      "suggested_time": "2026-11-01T05:00:00+00:00",
       "pending_items": [
         "time_change"
       ],
@@ -37,12 +38,20 @@
         {
           "tool": "save_draft",
           "error": "tool_unavailable"
+        },
+        {
+          "tool": "save_draft",
+          "error": "tool_unavailable"
+        },
+        {
+          "tool": "save_draft",
+          "error": "tool_unavailable"
         }
       ]
     }
   ],
-  "data_sha256": "35fcfd39ffae5d4ee65d8e6c0e2b95c68670a8a4132b678ccf4a09ef16e9d766",
-  "run_at": "2026-10-28T06:18:14.940523+00:00",
-  "elapsed_seconds": 5.58,
+  "data_sha256": "baba72ce0682dff881915d5491156c3d882ab1c3f7d556aaf88b7fd60ad55985",
+  "run_at": "2026-10-28T19:15:38.952489+00:00",
+  "elapsed_seconds": 8.951,
   "limitation": null
 }

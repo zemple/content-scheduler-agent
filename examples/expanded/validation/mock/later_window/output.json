@@ -1,0 +1,52 @@
+{
+  "request_id": "later_window-v2",
+  "mode": "mock",
+  "model": "offline-fixed-policy-v1",
+  "task_status": "completed",
+  "termination": "finished",
+  "steps": 6,
+  "max_steps": 24,
+  "items": [
+    {
+      "material_id": "M18",
+      "status": "completed",
+      "time_constraints": {
+        "adjustment": "later_only",
+        "not_before": "2026-11-05T04:00:00+00:00",
+        "not_after": "2026-11-05T06:00:00+00:00",
+        "deadline": "2026-11-05T07:00:00+00:00"
+      },
+      "review_status": "approved",
+      "risk_reasons": [],
+      "missing_fields": [],
+      "requested_time": "2026-11-05T04:00:00+00:00",
+      "hard_time": false,
+      "suggested_time": "2026-11-05T05:00:00+00:00",
+      "pending_items": [],
+      "draft_status": "saved",
+      "draft_id": "D-b4ce94ac75e64286",
+      "confirmation_status": "confirmed",
+      "uncompleted_reasons": [],
+      "saved_draft_validation": {
+        "source": "final_safety_recheck",
+        "valid": true,
+        "problems": [],
+        "review": {
+          "ok": true,
+          "material_id": "M18",
+          "review_status": "approved",
+          "missing_fields": [],
+          "risks": [],
+          "rule_version": "synthetic-2026-10-28-v1"
+        }
+      },
+      "duplicate": false,
+      "publication_status": "not_published",
+      "tool_errors": []
+    }
+  ],
+  "data_sha256": "baba72ce0682dff881915d5491156c3d882ab1c3f7d556aaf88b7fd60ad55985",
+  "run_at": "2026-10-28T19:15:02.833676+00:00",
+  "elapsed_seconds": 0.003,
+  "limitation": "Mock verifies workflow only, not real model decisions."
+}

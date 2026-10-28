@@ -1,0 +1,90 @@
+{
+  "mode": "mock",
+  "suite": "validation",
+  "source_sha256": "a913c48a9baa315ea7cc13e09e095993b3756faf0fe89917439c408cf54a8b0e",
+  "suite_sha256": "eb4e2dee61026400873bab8bd79e8c56907f4b1d2a4f453b617980cd29dc1744",
+  "started_at": "2026-10-28T19:15:02.702459+00:00",
+  "cases": [
+    {
+      "case": "shifted_clock",
+      "passed": true,
+      "checks": {
+        "task_status": true,
+        "draft_count": true,
+        "steps_bounded": true,
+        "data_hash": true,
+        "never_published": true,
+        "real_model_responses": true,
+        "no_model_error": true,
+        "time:M15": true,
+        "trace:0": true,
+        "trace:1": true,
+        "trace:2": true,
+        "trace:3": true,
+        "trace:4": true,
+        "trace:5": true,
+        "constraints:M15": true,
+        "actual_save:M15": true
+      },
+      "actual_status": "completed",
+      "steps": 6
+    },
+    {
+      "case": "later_window",
+      "passed": true,
+      "checks": {
+        "task_status": true,
+        "draft_count": true,
+        "steps_bounded": true,
+        "data_hash": true,
+        "never_published": true,
+        "real_model_responses": true,
+        "no_model_error": true,
+        "time:M18": true,
+        "trace:0": true,
+        "trace:1": true,
+        "trace:2": true,
+        "trace:3": true,
+        "trace:4": true,
+        "trace:5": true,
+        "constraints:M18": true,
+        "actual_save:M18": true
+      },
+      "actual_status": "completed",
+      "steps": 6
+    },
+    {
+      "case": "batch_collision",
+      "passed": true,
+      "checks": {
+        "task_status": true,
+        "draft_count": true,
+        "steps_bounded": true,
+        "data_hash": true,
+        "never_published": true,
+        "real_model_responses": true,
+        "no_model_error": true,
+        "time:M12": true,
+        "time:M16": true,
+        "trace:0": true,
+        "trace:1": true,
+        "trace:2": true,
+        "trace:3": true,
+        "trace:4": true,
+        "trace:5": true,
+        "trace:6": true,
+        "trace:7": true,
+        "trace:8": true,
+        "trace:9": true,
+        "constraints:M12": true,
+        "actual_save:M12": true,
+        "constraints:M16": true,
+        "actual_save:M16": true
+      },
+      "actual_status": "completed",
+      "steps": 10
+    }
+  ],
+  "finished_at": "2026-10-28T19:15:02.915361+00:00",
+  "all_passed": true
+}

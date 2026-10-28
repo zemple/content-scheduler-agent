@@ -10,6 +10,9 @@
     {
       "material_id": "M01",
       "status": "awaiting_confirmation",
+      "time_constraints": {
+        "adjustment": "later_only"
+      },
       "review_status": "approved",
       "risk_reasons": [],
       "missing_fields": [],
@@ -20,7 +23,7 @@
         "time_change"
       ],
       "draft_status": "saved",
-      "draft_id": "D-a98c2d6429884d66",
+      "draft_id": "D-19e7616cedd14b4b",
       "confirmation_status": "pending",
       "uncompleted_reasons": [],
       "saved_draft_validation": {
@@ -41,8 +44,8 @@
       "tool_errors": []
     }
   ],
-  "data_sha256": "35fcfd39ffae5d4ee65d8e6c0e2b95c68670a8a4132b678ccf4a09ef16e9d766",
-  "run_at": "2026-10-28T06:18:01.213848+00:00",
-  "elapsed_seconds": 5.033,
+  "data_sha256": "baba72ce0682dff881915d5491156c3d882ab1c3f7d556aaf88b7fd60ad55985",
+  "run_at": "2026-10-28T19:15:21.153601+00:00",
+  "elapsed_seconds": 5.235,
   "limitation": null
 }

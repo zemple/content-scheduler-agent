@@ -4,7 +4,7 @@ import time
 import urllib.error
 import urllib.request
 from dataclasses import dataclass, field
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from urllib.parse import urlparse
 
 from .tools import PARAMS
@@ -28,9 +28,23 @@ For each requested material: read metadata, check rules, query the preferred slo
 Missing material/required metadata: request input and do not save it. Blocking risks: stop that item.
 Manual review: a pending draft is allowed, never consider it approved.
 Initially query exactly the requested time (count=1), or the explicitly user-confirmed time if supplied.
-If occupied, choose to query alternatives using a later start and count up to 6. Never save an occupied slot.
+If unavailable, choose another query start and count up to 6. query_slots returns consecutive FORWARD
+hours from start_time; to inspect earlier slots choose an EARLIER start_time. Never save an unavailable slot.
+Respect structured constraints: not_before/not_after are inclusive; deadline is exclusive (BEFORE, never at).
+adjustment=earlier_only forbids times later than requested_time; later_only forbids earlier ones.
+If only earlier shifts are allowed and 18:00 is occupied, query e.g. 16:00..18:00 and choose the closest
+available earlier slot, not 19:00. A user confirmation never overrides window/direction/deadline constraints.
+In batches process hard_time=true items before flexible items regardless of their order in input.
+Slots may be reserved_for_fixed_item; assign the flexible item another permitted slot.
+For requests with these extra constraints choose a feasible slot closest to the preferred time;
+if equally close, prefer the earlier one. For legacy requests without any extra time constraints,
+prefer the subsequent hourly slots after an occupied preferred slot, preserving the original behavior.
 If an alternative is available you may save it as a PROPOSAL. Hard time changes without explicit user
 confirmation remain pending; the save tool enforces this. Do not alter the original request or fabricate consent.
+IMPORTANT: hard_time=true does NOT forbid suggesting or saving an alternative as PENDING.
+When a preferred slot is occupied, first query permitted alternatives before stopping that material;
+this applies to EACH hard-time material too. Never finish a batch just because the preferred hard slots
+are occupied. Do not invent earlier_only: it applies ONLY when that exact field is present in that item.
 If no alternative exists in the inspected window, stop with that limitation. No publish tool exists.
 After a save error, decide whether a single retry or another slot is justified; never claim success without tool evidence.
 An explicit tool_unavailable may be persistent: at most one retry of that failing tool per item, then stop that item.
@@ -83,7 +97,7 @@ class ChatModel:
         messages = [{'role': 'system', 'content': SYSTEM},
                     {'role': 'user', 'content': json.dumps(req.as_dict(), ensure_ascii=False)}]
         for event in events:
-            if event['tool'] in ('model_error', 'finish'):
+            if event['tool'] == 'model_error':
                 continue
             call_id = event.get('model_metadata', {}).get('call_id', 'step-' + str(event['step']))
             messages.append({'role': 'assistant', 'content': None, 'tool_calls': [{
@@ -132,8 +146,16 @@ class MockModel:
     mode = 'mock'
     model_name = 'offline-fixed-policy-v1'
 
+    @staticmethod
+    def shift(time, hours):
+        try:
+            return time + timedelta(hours=hours)
+        except OverflowError:
+            boundary = datetime.min if hours < 0 else datetime.max
+            return boundary.replace(tzinfo=timezone.utc, minute=0, second=0, microsecond=0)
+
     def decide(self, req, events):
-        for item in req.items:
+        for item in sorted(req.items, key=lambda i: not i['hard_time']):
             mid = item['material_id']
             own = [e for e in events if e['arguments'].get('material_id') == mid]
             by_name = lambda name: [e for e in own if e['tool'] == name]
@@ -152,7 +174,7 @@ class MockModel:
                     continue
                 # A save-time race requires another observation, not a claimed success.
                 if queries and queries[-1]['step'] < saves[-1]['step']:
-                    start = datetime.fromisoformat(saves[-1]['arguments']['suggested_time']) + timedelta(hours=1)
+                    start = self.shift(datetime.fromisoformat(saves[-1]['arguments']['suggested_time']), 1)
                     return Action('query_slots', {'material_id': mid, 'start_time': start.isoformat(), 'count': 3}, '离线策略：保存时出现冲突，补查后续时段。')
             if not queries:
                 preferred = req.confirmations.get(mid, item['requested_time'])
@@ -162,8 +184,21 @@ class MockModel:
                 continue
             free = [s for s in observation['slots'] if s['available']]
             if free:
-                return Action('save_draft', {'material_id': mid, 'suggested_time': free[0]['time']}, '离线策略：保存可用时段；确认边界由工具校验。')
+                preferred = datetime.fromisoformat(req.confirmations.get(mid, item['requested_time']))
+                chosen = min(free, key=lambda s: (abs(datetime.fromisoformat(s['time']) - preferred), s['time']))
+                return Action('save_draft', {'material_id': mid, 'suggested_time': chosen['time']}, '离线策略：保存满足约束且接近期望的时段；确认边界由工具校验。')
             if len(queries) == 1:
-                start = datetime.fromisoformat(queries[0]['arguments']['start_time']) + timedelta(hours=1)
-                return Action('query_slots', {'material_id': mid, 'start_time': start.isoformat(), 'count': 3}, '离线策略：原时段被占用，查询替代时段。')
+                preferred = datetime.fromisoformat(queries[0]['arguments']['start_time'])
+                if item.get('adjustment') == 'earlier_only' or item.get('not_after') or item.get('deadline'):
+                    start = self.shift(preferred, -6)
+                    if item.get('not_before'):
+                        start = max(start, datetime.fromisoformat(item['not_before']))
+                    if item.get('adjustment') == 'later_only':
+                        start = max(start, preferred)
+                else:
+                    start = self.shift(preferred, 1)
+                    if item.get('not_before'):
+                        start = max(start, datetime.fromisoformat(item['not_before']))
+                count = 6 if any(k in item for k in ('adjustment', 'not_before', 'not_after', 'deadline')) else 3
+                return Action('query_slots', {'material_id': mid, 'start_time': start.isoformat(), 'count': count}, '离线策略：原时段不可用，按用户允许的方向和窗口补查。')
         return Action('finish', {}, '离线策略：已处理可执行事项，其余需补充资料、确认或处理失败。')

@@ -1,0 +1,35 @@
+[
+  {
+    "draft_id": "D-c841a1cd574b4ade",
+    "request_id": "three_channels-v2",
+    "material_id": "M06",
+    "requested_time": "2026-11-06T11:00:00+00:00",
+    "suggested_time": "2026-11-06T11:00:00+00:00",
+    "channel": "video",
+    "confirmation_status": "confirmed",
+    "pending_items": [],
+    "publication_status": "not_published"
+  },
+  {
+    "draft_id": "D-943a298418694e4d",
+    "request_id": "three_channels-v2",
+    "material_id": "M08",
+    "requested_time": "2026-11-06T11:00:00+00:00",
+    "suggested_time": "2026-11-06T11:00:00+00:00",
+    "channel": "community",
+    "confirmation_status": "confirmed",
+    "pending_items": [],
+    "publication_status": "not_published"
+  },
+  {
+    "draft_id": "D-2a3b496282fc4802",
+    "request_id": "three_channels-v2",
+    "material_id": "M09",
+    "requested_time": "2026-11-06T11:00:00+00:00",
+    "suggested_time": "2026-11-06T11:00:00+00:00",
+    "channel": "social",
+    "confirmation_status": "confirmed",
+    "pending_items": [],
+    "publication_status": "not_published"
+  }
+]

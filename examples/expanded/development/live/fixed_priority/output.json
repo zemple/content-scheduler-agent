@@ -1,0 +1,82 @@
+{
+  "request_id": "fixed_priority-v2",
+  "mode": "live",
+  "model": "gpt-4.1-mini",
+  "task_status": "completed",
+  "termination": "finished",
+  "steps": 9,
+  "max_steps": 24,
+  "items": [
+    {
+      "material_id": "M05",
+      "status": "completed",
+      "time_constraints": {
+        "not_before": "2026-11-06T10:00:00+00:00",
+        "not_after": "2026-11-06T12:00:00+00:00"
+      },
+      "review_status": "approved",
+      "risk_reasons": [],
+      "missing_fields": [],
+      "requested_time": "2026-11-06T10:00:00+00:00",
+      "hard_time": false,
+      "suggested_time": "2026-11-06T11:00:00+00:00",
+      "pending_items": [],
+      "draft_status": "saved",
+      "draft_id": "D-8162e37938f843cc",
+      "confirmation_status": "confirmed",
+      "uncompleted_reasons": [],
+      "saved_draft_validation": {
+        "source": "final_safety_recheck",
+        "valid": true,
+        "problems": [],
+        "review": {
+          "ok": true,
+          "material_id": "M05",
+          "review_status": "approved",
+          "missing_fields": [],
+          "risks": [],
+          "rule_version": "synthetic-2026-10-28-v1"
+        }
+      },
+      "duplicate": false,
+      "publication_status": "not_published",
+      "tool_errors": []
+    },
+    {
+      "material_id": "M06",
+      "status": "completed",
+      "time_constraints": {},
+      "review_status": "approved",
+      "risk_reasons": [],
+      "missing_fields": [],
+      "requested_time": "2026-11-06T10:00:00+00:00",
+      "hard_time": true,
+      "suggested_time": "2026-11-06T10:00:00+00:00",
+      "pending_items": [],
+      "draft_status": "saved",
+      "draft_id": "D-e1cd1a408ac744c7",
+      "confirmation_status": "confirmed",
+      "uncompleted_reasons": [],
+      "saved_draft_validation": {
+        "source": "final_safety_recheck",
+        "valid": true,
+        "problems": [],
+        "review": {
+          "ok": true,
+          "material_id": "M06",
+          "review_status": "approved",
+          "missing_fields": [],
+          "risks": [],
+          "rule_version": "synthetic-2026-10-28-v1"
+        }
+      },
+      "duplicate": false,
+      "publication_status": "not_published",
+      "tool_errors": []
+    }
+  ],
+  "data_sha256": "50632fea65b5c7ef4cdf504fa21a3eb0d72c10e4e7396dea76f03a60a7a98be1",
+  "run_at": "2026-10-28T19:15:26.915289+00:00",
+  "elapsed_seconds": 8.439,
+  "limitation": null
+}

@@ -1,0 +1,14 @@
+{
+  "request_id": "manual_earlier-v2",
+  "items": [
+    {
+      "material_id": "M13",
+      "requested_time": "2026-11-06T10:00:00+00:00",
+      "hard_time": false,
+      "adjustment": "earlier_only",
+      "not_before": "2026-11-06T09:00:00+00:00",
+      "deadline": "2026-11-06T12:00:00+00:00"
+    }
+  ],
+  "confirmations": {}
+}

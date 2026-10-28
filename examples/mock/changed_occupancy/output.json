@@ -10,6 +10,9 @@
     {
       "material_id": "M01",
       "status": "awaiting_confirmation",
+      "time_constraints": {
+        "adjustment": "later_only"
+      },
       "review_status": "approved",
       "risk_reasons": [],
       "missing_fields": [],
@@ -20,7 +23,7 @@
         "time_change"
       ],
       "draft_status": "saved",
-      "draft_id": "D-640faa5d47f94b3d",
+      "draft_id": "D-523e0df6c12449f7",
       "confirmation_status": "pending",
       "uncompleted_reasons": [],
       "saved_draft_validation": {
@@ -41,8 +44,8 @@
       "tool_errors": []
     }
   ],
-  "data_sha256": "b20cf1dc91d04b4ae3d26c80414698554f8ec920e9b6521101ef2326cfb53af1",
-  "run_at": "2026-10-28T06:17:43.716539+00:00",
-  "elapsed_seconds": 0.001,
+  "data_sha256": "2b8afbca89342a7a220d135e1b88685517003cecf49010236a3c041eabab894b",
+  "run_at": "2026-10-28T19:15:01.379098+00:00",
+  "elapsed_seconds": 0.003,
   "limitation": "Mock verifies workflow only, not real model decisions."
 }

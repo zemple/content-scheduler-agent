@@ -15,7 +15,7 @@ flowchart TD
   L --> I[明确未完成并保留已有结果]
 ```
 
-读取、审核、排期查询和草稿保存均为本地工具。ChatModel 使用原生 function calling：每次请求声明工具 schema；接收模型工具名/参数；执行后按 tool_call_id 把结果放回下次请求。每次最多一个动作，不进行后台自动重试。finish 只负责结束控制。
+读取、审核、排期查询和草稿保存均为本地工具。ChatModel 使用原生 function calling：每次请求声明工具 schema；接收模型工具名/参数；执行后按 tool_call_id 把结果放回下次请求。每次最多一个动作，不进行后台自动重试。finish负责结束控制，并校验是否遗漏已有审核通过且仍可处理的素材；过早结束会作为工具错误反馈模型，不自动查询或保存。
 
 实时模式没有“如果冲突就固定调用替代查询”的程序分支；该选择由模型根据 query_slots 返回作出。离线 MockModel 则有固定策略，代码与输出明确标识 mock。程序中的固定分支负责字段、权限、风险和持久化约束，不能用来冒充模型决策。
 
@@ -58,5 +58,7 @@ Python >=3.11 标准库负责 CLI、HTTP、JSON、SQLite 和测试；无 Agent �
 接口实现依据 [OpenAI Function calling 官方文档](https://developers.openai.com/api/docs/guides/function-calling)，保持 assistant tool_calls -> tool response -> 下一轮模型请求的关系。其他兼容服务需自行验证 schema 和参数支持；不承诺所有“兼容 API”均可直接使用。
 
 ## 明确边界
+
+扩展的时间约束统一放在constraints.py；tools.py的time_violations再加入同批固定目标保护，查询、保存、历史草稿重验共用。模型选择如何移动查询起点、选哪个候选时段；保护逻辑不会自动执行下一步工具。完整新增字段、64条排期和开发/验证方法见advanced-scheduling.md。
 
 JSON 文件每次 CLI 启动加载为业务快照；运行中修改磁盘文件不会自动热更新。并发保证覆盖同一 SQLite 数据库中的草稿，不覆盖多个数据库或外部发布系统。无身份认证，confirmations 代表本地操作者输入，不能用于生产授权。

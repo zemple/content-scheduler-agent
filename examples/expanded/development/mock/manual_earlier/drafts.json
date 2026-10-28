@@ -1,0 +1,15 @@
+[
+  {
+    "draft_id": "D-166e94ea0c0b4d11",
+    "request_id": "manual_earlier-v2",
+    "material_id": "M13",
+    "requested_time": "2026-11-06T10:00:00+00:00",
+    "suggested_time": "2026-11-06T09:00:00+00:00",
+    "channel": "video",
+    "confirmation_status": "pending",
+    "pending_items": [
+      "manual_review"
+    ],
+    "publication_status": "not_published"
+  }
+]

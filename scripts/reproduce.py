@@ -18,11 +18,11 @@ CASES = {
     'normal': {'time': A, 'status': 'completed', 'saved': 1},
     'missing': {'mid': 'M02', 'status': 'needs_input', 'saved': 0},
     'risk': {'mid': 'M03', 'status': 'blocked', 'saved': 0},
-    'conflict': {'status': 'awaiting_confirmation', 'saved': 1, 'suggestion': '2026-11-01T11:00:00+00:00'},
+    'conflict': {'adjustment':'later_only', 'status': 'awaiting_confirmation', 'saved': 1, 'suggestion': '2026-11-01T11:00:00+00:00'},
     'duplicate': {'time': A, 'status': 'completed', 'saved': 1, 'repeat': True},
     'save_failure': {'fail': 'save_draft', 'status': 'incomplete', 'saved': 0},
     'tool_failure': {'fail': 'read_material', 'status': 'incomplete', 'saved': 0},
-    'changed_occupancy': {'occupied_extra': A, 'status': 'awaiting_confirmation', 'saved': 1, 'suggestion': '2026-11-01T12:00:00+00:00'},
+    'changed_occupancy': {'adjustment':'later_only', 'occupied_extra': A, 'status': 'awaiting_confirmation', 'saved': 1, 'suggestion': '2026-11-01T12:00:00+00:00'},
     'confirmed': {'confirmations': {'M01': A}, 'status': 'completed', 'saved': 1, 'suggestion': '2026-11-01T11:00:00+00:00'},
     'manual_review': {'mid': 'M04', 'time': A, 'status': 'awaiting_confirmation', 'saved': 1},
     'no_slots': {'no_slots': True, 'status': 'incomplete', 'saved': 0},
@@ -30,7 +30,7 @@ CASES = {
     'batch': {'batch': True, 'max_steps': 20, 'status': 'partial', 'saved': 1},
     'repeat_changed_occupancy': {'time': A, 'status': 'completed', 'second_status': 'incomplete', 'saved': 1, 'repeat': True, 'occupy_after_first': True},
     'repeat_changed_rules': {'time': A, 'status': 'completed', 'second_status': 'blocked', 'saved': 1, 'repeat': True, 'rules_after_first': True},
-    'batch_pending': {'batch_pending': True, 'max_steps': 20, 'status': 'awaiting_confirmation', 'saved': 2},
+    'batch_pending': {'adjustment':'later_only','batch_pending': True, 'max_steps': 20, 'status': 'awaiting_confirmation', 'saved': 2},
 }
 
 
@@ -71,11 +71,15 @@ def main():
         request = {'request_id': name + '-001', 'items': [
             {'material_id': spec.get('mid', 'M01'), 'requested_time': spec.get('time', T), 'hard_time': True}],
             'confirmations': spec.get('confirmations', {})}
+        if spec.get('adjustment'):
+            request['items'][0]['adjustment'] = spec['adjustment']
+        if spec.get('no_slots'):
+            request['items'][0].update(not_before=T, not_after=(datetime.fromisoformat(T)+timedelta(hours=23)).isoformat())
         if spec.get('batch'):
             request['items'][0]['requested_time'] = A
             request['items'].append({'material_id': 'M03', 'requested_time': T, 'hard_time': True})
         if spec.get('batch_pending'):
-            request['items'].append({'material_id': 'M05', 'requested_time': T, 'hard_time': True})
+            request['items'].append({'material_id': 'M05', 'requested_time': T, 'hard_time': True, 'adjustment':'later_only'})
         write_json(folder / 'input.json', request)
         runs, checks = [], []
         with tempfile.TemporaryDirectory(prefix='scheduler-eval-') as tmp:

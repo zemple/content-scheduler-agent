@@ -10,6 +10,7 @@
     {
       "material_id": "M01",
       "status": "completed",
+      "time_constraints": {},
       "review_status": "approved",
       "risk_reasons": [],
       "missing_fields": [],
@@ -18,7 +19,7 @@
       "suggested_time": "2026-11-01T11:00:00+00:00",
       "pending_items": [],
       "draft_status": "saved",
-      "draft_id": "D-b87204337a3443b1",
+      "draft_id": "D-035b9bd456394030",
       "confirmation_status": "confirmed",
       "uncompleted_reasons": [],
       "saved_draft_validation": {
@@ -39,8 +40,8 @@
       "tool_errors": []
     }
   ],
-  "data_sha256": "35fcfd39ffae5d4ee65d8e6c0e2b95c68670a8a4132b678ccf4a09ef16e9d766",
-  "run_at": "2026-10-28T06:18:46.447278+00:00",
-  "elapsed_seconds": 4.501,
+  "data_sha256": "baba72ce0682dff881915d5491156c3d882ab1c3f7d556aaf88b7fd60ad55985",
+  "run_at": "2026-10-28T19:16:14.924702+00:00",
+  "elapsed_seconds": 3.783,
   "limitation": null
 }

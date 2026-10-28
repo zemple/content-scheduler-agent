@@ -1,6 +1,6 @@
 {
   "mode": "live",
-  "started_at": "2026-10-28T06:17:47.095030+00:00",
+  "started_at": "2026-10-28T19:15:06.449079+00:00",
   "cases": [
     {
       "case": "normal",
@@ -69,7 +69,7 @@
       "expected_status": "incomplete",
       "actual_status": "incomplete",
       "steps": [
-        7
+        9
       ],
       "artifacts": "save_failure/",
       "checks_passed": 5,
@@ -129,7 +129,7 @@
       "expected_status": "incomplete",
       "actual_status": "incomplete",
       "steps": [
-        5
+        8
       ],
       "artifacts": "no_slots/",
       "checks_passed": 5,
@@ -191,13 +191,13 @@
       "expected_status": "awaiting_confirmation",
       "actual_status": "awaiting_confirmation",
       "steps": [
-        13
+        11
       ],
       "artifacts": "batch_pending/",
       "checks_passed": 6,
       "checks_total": 6
     }
   ],
-  "finished_at": "2026-10-28T06:19:09.085223+00:00",
+  "finished_at": "2026-10-28T19:16:41.678363+00:00",
   "all_passed": true
 }

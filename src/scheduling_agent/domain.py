@@ -45,7 +45,9 @@ class Request:
             raise ValidationError('items must contain 1..10 materials')
         normalized, ids = [], set()
         for item in items:
-            if not isinstance(item, dict) or set(item) != {'material_id', 'requested_time', 'hard_time'}:
+            required = {'material_id', 'requested_time', 'hard_time'}
+            optional = {'not_before', 'not_after', 'deadline', 'adjustment'}
+            if not isinstance(item, dict) or not required <= set(item) or set(item) - required - optional:
                 raise ValidationError('each item requires material_id, requested_time, hard_time')
             mid = item['material_id']
             if not isinstance(mid, str) or not mid.strip() or mid in ids:
@@ -53,7 +55,25 @@ class Request:
             if type(item['hard_time']) is not bool:
                 raise ValidationError('hard_time must be boolean')
             ids.add(mid)
-            normalized.append({**item, 'requested_time': instant(item['requested_time'])})
+            normalized_item = {**item, 'requested_time': instant(item['requested_time'])}
+            if item.get('adjustment', 'either') not in ('either', 'earlier_only', 'later_only'):
+                raise ValidationError('adjustment must be either, earlier_only or later_only')
+            for name in ('not_before', 'not_after', 'deadline'):
+                if name in item:
+                    normalized_item[name] = instant(item[name])
+            lower = normalized_item.get('not_before')
+            upper = normalized_item.get('not_after')
+            deadline = normalized_item.get('deadline')
+            preferred = normalized_item['requested_time']
+            if lower and upper and lower > upper:
+                raise ValidationError('not_before must not be later than not_after')
+            if lower and deadline and lower >= deadline:
+                raise ValidationError('not_before must be strictly before deadline')
+            if item.get('adjustment') == 'earlier_only' and lower and lower > preferred:
+                raise ValidationError('earlier_only has no feasible slot in this window')
+            if item.get('adjustment') == 'later_only' and ((upper and upper < preferred) or (deadline and deadline <= preferred)):
+                raise ValidationError('later_only has no feasible slot in this window')
+            normalized.append(normalized_item)
         confirmations = value.get('confirmations', {})
         if not isinstance(confirmations, dict) or set(confirmations) - ids:
             raise ValidationError('confirmations must map requested material IDs to explicit times')

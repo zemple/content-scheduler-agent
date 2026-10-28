@@ -1,0 +1,219 @@
+[
+  {
+    "name": "earlier_only",
+    "request": {
+      "request_id": "earlier_only-v2",
+      "items": [
+        {
+          "material_id": "M06",
+          "requested_time": "2026-11-06T18:00:00+08:00",
+          "hard_time": false,
+          "adjustment": "earlier_only",
+          "not_before": "2026-11-06T16:00:00+08:00",
+          "deadline": "2026-11-06T20:00:00+08:00"
+        }
+      ],
+      "confirmations": {}
+    },
+    "expected": {
+      "status": "completed",
+      "saved": 1,
+      "times": {
+        "M06": "2026-11-06T17:00:00+08:00"
+      }
+    }
+  },
+  {
+    "name": "window_deadline",
+    "request": {
+      "request_id": "window_deadline-v2",
+      "items": [
+        {
+          "material_id": "M07",
+          "requested_time": "2026-11-06T18:00:00+08:00",
+          "hard_time": false,
+          "not_before": "2026-11-06T18:00:00+08:00",
+          "not_after": "2026-11-06T19:00:00+08:00",
+          "deadline": "2026-11-06T20:00:00+08:00"
+        }
+      ],
+      "confirmations": {}
+    },
+    "expected": {
+      "status": "completed",
+      "saved": 1,
+      "times": {
+        "M07": "2026-11-06T19:00:00+08:00"
+      }
+    }
+  },
+  {
+    "name": "deadline_no_slot",
+    "request": {
+      "request_id": "deadline_no_slot-v2",
+      "items": [
+        {
+          "material_id": "M11",
+          "requested_time": "2026-11-06T20:00:00+08:00",
+          "hard_time": false,
+          "not_before": "2026-11-06T18:00:00+08:00",
+          "deadline": "2026-11-06T20:00:00+08:00"
+        }
+      ],
+      "confirmations": {}
+    },
+    "expected": {
+      "status": "incomplete",
+      "saved": 0,
+      "times": {}
+    },
+    "add_slots": [
+      {
+        "channel": "video",
+        "time": "2026-11-06T19:00:00+08:00"
+      }
+    ]
+  },
+  {
+    "name": "fixed_priority",
+    "request": {
+      "request_id": "fixed_priority-v2",
+      "items": [
+        {
+          "material_id": "M05",
+          "requested_time": "2026-11-06T18:00:00+08:00",
+          "hard_time": false,
+          "not_before": "2026-11-06T18:00:00+08:00",
+          "not_after": "2026-11-06T20:00:00+08:00"
+        },
+        {
+          "material_id": "M06",
+          "requested_time": "2026-11-06T18:00:00+08:00",
+          "hard_time": true
+        }
+      ],
+      "confirmations": {}
+    },
+    "expected": {
+      "status": "completed",
+      "saved": 2,
+      "times": {
+        "M05": "2026-11-06T19:00:00+08:00",
+        "M06": "2026-11-06T18:00:00+08:00"
+      }
+    },
+    "remove_slots": [
+      {
+        "channel": "video",
+        "time": "2026-11-06T18:00:00+08:00"
+      }
+    ]
+  },
+  {
+    "name": "three_channels",
+    "request": {
+      "request_id": "three_channels-v2",
+      "items": [
+        {
+          "material_id": "M06",
+          "requested_time": "2026-11-06T19:00:00+08:00",
+          "hard_time": true
+        },
+        {
+          "material_id": "M09",
+          "requested_time": "2026-11-06T19:00:00+08:00",
+          "hard_time": true
+        },
+        {
+          "material_id": "M08",
+          "requested_time": "2026-11-06T19:00:00+08:00",
+          "hard_time": true
+        }
+      ],
+      "confirmations": {}
+    },
+    "expected": {
+      "status": "completed",
+      "saved": 3,
+      "times": {
+        "M06": "2026-11-06T19:00:00+08:00",
+        "M09": "2026-11-06T19:00:00+08:00",
+        "M08": "2026-11-06T19:00:00+08:00"
+      }
+    }
+  },
+  {
+    "name": "manual_earlier",
+    "request": {
+      "request_id": "manual_earlier-v2",
+      "items": [
+        {
+          "material_id": "M13",
+          "requested_time": "2026-11-06T18:00:00+08:00",
+          "hard_time": false,
+          "adjustment": "earlier_only",
+          "not_before": "2026-11-06T17:00:00+08:00",
+          "deadline": "2026-11-06T20:00:00+08:00"
+        }
+      ],
+      "confirmations": {}
+    },
+    "expected": {
+      "status": "awaiting_confirmation",
+      "saved": 1,
+      "times": {
+        "M13": "2026-11-06T17:00:00+08:00"
+      },
+      "pending": {
+        "M13": [
+          "manual_review"
+        ]
+      }
+    }
+  },
+  {
+    "name": "missing_rights",
+    "request": {
+      "request_id": "missing_rights-v2",
+      "items": [
+        {
+          "material_id": "M19",
+          "requested_time": "2026-11-06T18:00:00+08:00",
+          "hard_time": false
+        }
+      ],
+      "confirmations": {}
+    },
+    "expected": {
+      "status": "needs_input",
+      "saved": 0,
+      "times": {}
+    }
+  },
+  {
+    "name": "confirmed_earlier",
+    "request": {
+      "request_id": "confirmed_earlier-v2",
+      "items": [
+        {
+          "material_id": "M06",
+          "requested_time": "2026-11-06T18:00:00+08:00",
+          "hard_time": true,
+          "adjustment": "earlier_only",
+          "not_before": "2026-11-06T16:00:00+08:00",
+          "deadline": "2026-11-06T20:00:00+08:00"
+        }
+      ],
+      "confirmations": {
+        "M06": "2026-11-06T17:00:00+08:00"
+      }
+    },
+    "expected": {
+      "status": "completed",
+      "saved": 1,
+      "times": {
+        "M06": "2026-11-06T17:00:00+08:00"
+      }
+    }
+  }
+]

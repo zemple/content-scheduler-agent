@@ -1,0 +1,41 @@
+{
+  "request_id": "missing_rights-v2",
+  "mode": "mock",
+  "model": "offline-fixed-policy-v1",
+  "task_status": "needs_input",
+  "termination": "finished",
+  "steps": 3,
+  "max_steps": 24,
+  "items": [
+    {
+      "material_id": "M19",
+      "status": "needs_input",
+      "time_constraints": {},
+      "review_status": "needs_input",
+      "risk_reasons": [],
+      "missing_fields": [
+        "rights_confirmed"
+      ],
+      "requested_time": "2026-11-06T10:00:00+00:00",
+      "hard_time": false,
+      "suggested_time": null,
+      "pending_items": [
+        "provide:rights_confirmed"
+      ],
+      "draft_status": "not_saved",
+      "draft_id": null,
+      "confirmation_status": "not_confirmed",
+      "uncompleted_reasons": [
+        "review_needs_input"
+      ],
+      "saved_draft_validation": null,
+      "duplicate": false,
+      "publication_status": "not_published",
+      "tool_errors": []
+    }
+  ],
+  "data_sha256": "baba72ce0682dff881915d5491156c3d882ab1c3f7d556aaf88b7fd60ad55985",
+  "run_at": "2026-10-28T19:15:02.585206+00:00",
+  "elapsed_seconds": 0.002,
+  "limitation": "Mock verifies workflow only, not real model decisions."
+}

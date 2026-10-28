@@ -1,0 +1,49 @@
+{
+  "request_id": "no_slots-001",
+  "mode": "live",
+  "model": "gpt-4.1-mini",
+  "task_status": "awaiting_confirmation",
+  "termination": "finished",
+  "steps": 6,
+  "max_steps": 12,
+  "items": [
+    {
+      "material_id": "M01",
+      "status": "awaiting_confirmation",
+      "time_constraints": {},
+      "review_status": "approved",
+      "risk_reasons": [],
+      "missing_fields": [],
+      "requested_time": "2026-11-01T10:00:00+00:00",
+      "hard_time": true,
+      "suggested_time": "2026-11-01T09:00:00+00:00",
+      "pending_items": [
+        "time_change"
+      ],
+      "draft_status": "saved",
+      "draft_id": "D-f15e2dff7a82480b",
+      "confirmation_status": "pending",
+      "uncompleted_reasons": [],
+      "saved_draft_validation": {
+        "source": "final_safety_recheck",
+        "valid": true,
+        "problems": [],
+        "review": {
+          "ok": true,
+          "material_id": "M01",
+          "review_status": "approved",
+          "missing_fields": [],
+          "risks": [],
+          "rule_version": "synthetic-2026-10-28-v1"
+        }
+      },
+      "duplicate": false,
+      "publication_status": "not_published",
+      "tool_errors": []
+    }
+  ],
+  "data_sha256": "5cac87bcb742adba1909cf0d8dfcafd73217d1d06e5a40f3619632327a41bff2",
+  "run_at": "2026-10-28T19:07:44.397240+00:00",
+  "elapsed_seconds": 5.194,
+  "limitation": null
+}

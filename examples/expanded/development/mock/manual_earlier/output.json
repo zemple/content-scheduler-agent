@@ -1,0 +1,65 @@
+{
+  "request_id": "manual_earlier-v2",
+  "mode": "mock",
+  "model": "offline-fixed-policy-v1",
+  "task_status": "awaiting_confirmation",
+  "termination": "finished",
+  "steps": 6,
+  "max_steps": 24,
+  "items": [
+    {
+      "material_id": "M13",
+      "status": "awaiting_confirmation",
+      "time_constraints": {
+        "adjustment": "earlier_only",
+        "not_before": "2026-11-06T09:00:00+00:00",
+        "deadline": "2026-11-06T12:00:00+00:00"
+      },
+      "review_status": "needs_review",
+      "risk_reasons": [
+        {
+          "code": "manual_review",
+          "severity": "review",
+          "reason": "Human review required for tagged material."
+        }
+      ],
+      "missing_fields": [],
+      "requested_time": "2026-11-06T10:00:00+00:00",
+      "hard_time": false,
+      "suggested_time": "2026-11-06T09:00:00+00:00",
+      "pending_items": [
+        "manual_review"
+      ],
+      "draft_status": "saved",
+      "draft_id": "D-166e94ea0c0b4d11",
+      "confirmation_status": "pending",
+      "uncompleted_reasons": [],
+      "saved_draft_validation": {
+        "source": "final_safety_recheck",
+        "valid": true,
+        "problems": [],
+        "review": {
+          "ok": true,
+          "material_id": "M13",
+          "review_status": "needs_review",
+          "missing_fields": [],
+          "risks": [
+            {
+              "code": "manual_review",
+              "severity": "review",
+              "reason": "Human review required for tagged material."
+            }
+          ],
+          "rule_version": "synthetic-2026-10-28-v1"
+        }
+      },
+      "duplicate": false,
+      "publication_status": "not_published",
+      "tool_errors": []
+    }
+  ],
+  "data_sha256": "baba72ce0682dff881915d5491156c3d882ab1c3f7d556aaf88b7fd60ad55985",
+  "run_at": "2026-10-28T19:15:02.516457+00:00",
+  "elapsed_seconds": 0.003,
+  "limitation": "Mock verifies workflow only, not real model decisions."
+}

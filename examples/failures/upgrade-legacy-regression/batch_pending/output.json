@@ -1,0 +1,59 @@
+{
+  "request_id": "batch_pending-001",
+  "mode": "live",
+  "model": "gpt-4.1-mini",
+  "task_status": "incomplete",
+  "termination": "finished",
+  "steps": 7,
+  "max_steps": 20,
+  "items": [
+    {
+      "material_id": "M01",
+      "status": "incomplete",
+      "time_constraints": {},
+      "review_status": "approved",
+      "risk_reasons": [],
+      "missing_fields": [],
+      "requested_time": "2026-11-01T10:00:00+00:00",
+      "hard_time": true,
+      "suggested_time": null,
+      "pending_items": [],
+      "draft_status": "not_saved",
+      "draft_id": null,
+      "confirmation_status": "not_confirmed",
+      "uncompleted_reasons": [
+        "no_available_slot_in_checked_window"
+      ],
+      "saved_draft_validation": null,
+      "duplicate": false,
+      "publication_status": "not_published",
+      "tool_errors": []
+    },
+    {
+      "material_id": "M05",
+      "status": "incomplete",
+      "time_constraints": {},
+      "review_status": "approved",
+      "risk_reasons": [],
+      "missing_fields": [],
+      "requested_time": "2026-11-01T10:00:00+00:00",
+      "hard_time": true,
+      "suggested_time": null,
+      "pending_items": [],
+      "draft_status": "not_saved",
+      "draft_id": null,
+      "confirmation_status": "not_confirmed",
+      "uncompleted_reasons": [
+        "no_available_slot_in_checked_window"
+      ],
+      "saved_draft_validation": null,
+      "duplicate": false,
+      "publication_status": "not_published",
+      "tool_errors": []
+    }
+  ],
+  "data_sha256": "baba72ce0682dff881915d5491156c3d882ab1c3f7d556aaf88b7fd60ad55985",
+  "run_at": "2026-10-28T19:08:13.613410+00:00",
+  "elapsed_seconds": 5.795,
+  "limitation": null
+}

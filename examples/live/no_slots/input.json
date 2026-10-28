@@ -4,7 +4,9 @@
     {
       "material_id": "M01",
       "requested_time": "2026-11-01T10:00:00+00:00",
-      "hard_time": true
+      "hard_time": true,
+      "not_before": "2026-11-01T10:00:00+00:00",
+      "not_after": "2026-11-02T09:00:00+00:00"
     }
   ],
   "confirmations": {}

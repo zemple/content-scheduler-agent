@@ -1,0 +1,323 @@
+[
+  {
+    "channel": "video",
+    "time": "2026-11-01T12:00:00+08:00",
+    "material_id": "EX-1-video-12"
+  },
+  {
+    "channel": "video",
+    "time": "2026-11-01T15:00:00+08:00",
+    "material_id": "EX-1-video-15"
+  },
+  {
+    "channel": "video",
+    "time": "2026-11-01T18:00:00+08:00",
+    "material_id": "EX-1-video-18"
+  },
+  {
+    "channel": "social",
+    "time": "2026-11-01T12:00:00+08:00",
+    "material_id": "EX-1-social-12"
+  },
+  {
+    "channel": "social",
+    "time": "2026-11-01T15:00:00+08:00",
+    "material_id": "EX-1-social-15"
+  },
+  {
+    "channel": "social",
+    "time": "2026-11-01T18:00:00+08:00",
+    "material_id": "EX-1-social-18"
+  },
+  {
+    "channel": "community",
+    "time": "2026-11-01T12:00:00+08:00",
+    "material_id": "EX-1-community-12"
+  },
+  {
+    "channel": "community",
+    "time": "2026-11-01T15:00:00+08:00",
+    "material_id": "EX-1-community-15"
+  },
+  {
+    "channel": "community",
+    "time": "2026-11-01T18:00:00+08:00",
+    "material_id": "EX-1-community-18"
+  },
+  {
+    "channel": "video",
+    "time": "2026-11-02T12:00:00+08:00",
+    "material_id": "EX-2-video-12"
+  },
+  {
+    "channel": "video",
+    "time": "2026-11-02T15:00:00+08:00",
+    "material_id": "EX-2-video-15"
+  },
+  {
+    "channel": "video",
+    "time": "2026-11-02T18:00:00+08:00",
+    "material_id": "EX-2-video-18"
+  },
+  {
+    "channel": "social",
+    "time": "2026-11-02T12:00:00+08:00",
+    "material_id": "EX-2-social-12"
+  },
+  {
+    "channel": "social",
+    "time": "2026-11-02T15:00:00+08:00",
+    "material_id": "EX-2-social-15"
+  },
+  {
+    "channel": "social",
+    "time": "2026-11-02T18:00:00+08:00",
+    "material_id": "EX-2-social-18"
+  },
+  {
+    "channel": "community",
+    "time": "2026-11-02T12:00:00+08:00",
+    "material_id": "EX-2-community-12"
+  },
+  {
+    "channel": "community",
+    "time": "2026-11-02T15:00:00+08:00",
+    "material_id": "EX-2-community-15"
+  },
+  {
+    "channel": "community",
+    "time": "2026-11-02T18:00:00+08:00",
+    "material_id": "EX-2-community-18"
+  },
+  {
+    "channel": "video",
+    "time": "2026-11-03T12:00:00+08:00",
+    "material_id": "EX-3-video-12"
+  },
+  {
+    "channel": "video",
+    "time": "2026-11-03T15:00:00+08:00",
+    "material_id": "EX-3-video-15"
+  },
+  {
+    "channel": "video",
+    "time": "2026-11-03T18:00:00+08:00",
+    "material_id": "EX-3-video-18"
+  },
+  {
+    "channel": "social",
+    "time": "2026-11-03T12:00:00+08:00",
+    "material_id": "EX-3-social-12"
+  },
+  {
+    "channel": "social",
+    "time": "2026-11-03T15:00:00+08:00",
+    "material_id": "EX-3-social-15"
+  },
+  {
+    "channel": "social",
+    "time": "2026-11-03T18:00:00+08:00",
+    "material_id": "EX-3-social-18"
+  },
+  {
+    "channel": "community",
+    "time": "2026-11-03T12:00:00+08:00",
+    "material_id": "EX-3-community-12"
+  },
+  {
+    "channel": "community",
+    "time": "2026-11-03T15:00:00+08:00",
+    "material_id": "EX-3-community-15"
+  },
+  {
+    "channel": "community",
+    "time": "2026-11-03T18:00:00+08:00",
+    "material_id": "EX-3-community-18"
+  },
+  {
+    "channel": "video",
+    "time": "2026-11-04T12:00:00+08:00",
+    "material_id": "EX-4-video-12"
+  },
+  {
+    "channel": "video",
+    "time": "2026-11-04T15:00:00+08:00",
+    "material_id": "EX-4-video-15"
+  },
+  {
+    "channel": "video",
+    "time": "2026-11-04T18:00:00+08:00",
+    "material_id": "EX-4-video-18"
+  },
+  {
+    "channel": "social",
+    "time": "2026-11-04T12:00:00+08:00",
+    "material_id": "EX-4-social-12"
+  },
+  {
+    "channel": "social",
+    "time": "2026-11-04T15:00:00+08:00",
+    "material_id": "EX-4-social-15"
+  },
+  {
+    "channel": "social",
+    "time": "2026-11-04T18:00:00+08:00",
+    "material_id": "EX-4-social-18"
+  },
+  {
+    "channel": "community",
+    "time": "2026-11-04T12:00:00+08:00",
+    "material_id": "EX-4-community-12"
+  },
+  {
+    "channel": "community",
+    "time": "2026-11-04T15:00:00+08:00",
+    "material_id": "EX-4-community-15"
+  },
+  {
+    "channel": "community",
+    "time": "2026-11-04T18:00:00+08:00",
+    "material_id": "EX-4-community-18"
+  },
+  {
+    "channel": "video",
+    "time": "2026-11-05T12:00:00+08:00",
+    "material_id": "EX-5-video-12"
+  },
+  {
+    "channel": "video",
+    "time": "2026-11-05T15:00:00+08:00",
+    "material_id": "EX-5-video-15"
+  },
+  {
+    "channel": "video",
+    "time": "2026-11-05T18:00:00+08:00",
+    "material_id": "EX-5-video-18"
+  },
+  {
+    "channel": "social",
+    "time": "2026-11-05T12:00:00+08:00",
+    "material_id": "EX-5-social-12"
+  },
+  {
+    "channel": "social",
+    "time": "2026-11-05T15:00:00+08:00",
+    "material_id": "EX-5-social-15"
+  },
+  {
+    "channel": "social",
+    "time": "2026-11-05T18:00:00+08:00",
+    "material_id": "EX-5-social-18"
+  },
+  {
+    "channel": "community",
+    "time": "2026-11-05T12:00:00+08:00",
+    "material_id": "EX-5-community-12"
+  },
+  {
+    "channel": "community",
+    "time": "2026-11-05T15:00:00+08:00",
+    "material_id": "EX-5-community-15"
+  },
+  {
+    "channel": "community",
+    "time": "2026-11-05T18:00:00+08:00",
+    "material_id": "EX-5-community-18"
+  },
+  {
+    "channel": "video",
+    "time": "2026-11-06T12:00:00+08:00",
+    "material_id": "EX-6-video-12"
+  },
+  {
+    "channel": "video",
+    "time": "2026-11-06T15:00:00+08:00",
+    "material_id": "EX-6-video-15"
+  },
+  {
+    "channel": "video",
+    "time": "2026-11-06T18:00:00+08:00",
+    "material_id": "EX-6-video-18"
+  },
+  {
+    "channel": "social",
+    "time": "2026-11-06T12:00:00+08:00",
+    "material_id": "EX-6-social-12"
+  },
+  {
+    "channel": "social",
+    "time": "2026-11-06T15:00:00+08:00",
+    "material_id": "EX-6-social-15"
+  },
+  {
+    "channel": "social",
+    "time": "2026-11-06T18:00:00+08:00",
+    "material_id": "EX-6-social-18"
+  },
+  {
+    "channel": "community",
+    "time": "2026-11-06T12:00:00+08:00",
+    "material_id": "EX-6-community-12"
+  },
+  {
+    "channel": "community",
+    "time": "2026-11-06T15:00:00+08:00",
+    "material_id": "EX-6-community-15"
+  },
+  {
+    "channel": "community",
+    "time": "2026-11-06T18:00:00+08:00",
+    "material_id": "EX-6-community-18"
+  },
+  {
+    "channel": "video",
+    "time": "2026-11-07T12:00:00+08:00",
+    "material_id": "EX-7-video-12"
+  },
+  {
+    "channel": "video",
+    "time": "2026-11-07T15:00:00+08:00",
+    "material_id": "EX-7-video-15"
+  },
+  {
+    "channel": "video",
+    "time": "2026-11-07T18:00:00+08:00",
+    "material_id": "EX-7-video-18"
+  },
+  {
+    "channel": "social",
+    "time": "2026-11-07T12:00:00+08:00",
+    "material_id": "EX-7-social-12"
+  },
+  {
+    "channel": "social",
+    "time": "2026-11-07T15:00:00+08:00",
+    "material_id": "EX-7-social-15"
+  },
+  {
+    "channel": "social",
+    "time": "2026-11-07T18:00:00+08:00",
+    "material_id": "EX-7-social-18"
+  },
+  {
+    "channel": "community",
+    "time": "2026-11-07T12:00:00+08:00",
+    "material_id": "EX-7-community-12"
+  },
+  {
+    "channel": "community",
+    "time": "2026-11-07T15:00:00+08:00",
+    "material_id": "EX-7-community-15"
+  },
+  {
+    "channel": "community",
+    "time": "2026-11-07T18:00:00+08:00",
+    "material_id": "EX-7-community-18"
+  },
+  {
+    "channel": "video",
+    "time": "2026-11-06T20:00:00+08:00",
+    "material_id": "EX-LAUNCH-LIVE",
+    "description": "合成新品直播节点"
+  }
+]

@@ -1,0 +1,40 @@
+{
+  "request_id": "deadline_no_slot-v2",
+  "mode": "live",
+  "model": "gpt-4.1-mini",
+  "task_status": "incomplete",
+  "termination": "finished",
+  "steps": 4,
+  "max_steps": 24,
+  "items": [
+    {
+      "material_id": "M11",
+      "status": "incomplete",
+      "time_constraints": {
+        "not_before": "2026-11-06T10:00:00+00:00",
+        "deadline": "2026-11-06T12:00:00+00:00"
+      },
+      "review_status": "approved",
+      "risk_reasons": [],
+      "missing_fields": [],
+      "requested_time": "2026-11-06T12:00:00+00:00",
+      "hard_time": false,
+      "suggested_time": null,
+      "pending_items": [],
+      "draft_status": "not_saved",
+      "draft_id": null,
+      "confirmation_status": "not_confirmed",
+      "uncompleted_reasons": [
+        "no_available_slot_in_checked_window"
+      ],
+      "saved_draft_validation": null,
+      "duplicate": false,
+      "publication_status": "not_published",
+      "tool_errors": []
+    }
+  ],
+  "data_sha256": "885279f9398d0dfbf9a482cc6230540df1a0e03787ac55ea2a566690a134ecf0",
+  "run_at": "2026-10-28T19:15:18.373397+00:00",
+  "elapsed_seconds": 3.264,
+  "limitation": null
+}

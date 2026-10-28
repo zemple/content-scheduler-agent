@@ -1,0 +1,80 @@
+[
+  {
+    "name": "shifted_clock",
+    "request": {
+      "request_id": "shifted_clock-v2",
+      "items": [
+        {
+          "material_id": "M15",
+          "requested_time": "2026-11-07T15:00:00+08:00",
+          "hard_time": false,
+          "adjustment": "earlier_only",
+          "not_before": "2026-11-07T13:00:00+08:00",
+          "deadline": "2026-11-07T18:00:00+08:00"
+        }
+      ],
+      "confirmations": {}
+    },
+    "expected": {
+      "status": "completed",
+      "saved": 1,
+      "times": {
+        "M15": "2026-11-07T14:00:00+08:00"
+      }
+    }
+  },
+  {
+    "name": "later_window",
+    "request": {
+      "request_id": "later_window-v2",
+      "items": [
+        {
+          "material_id": "M18",
+          "requested_time": "2026-11-05T12:00:00+08:00",
+          "hard_time": false,
+          "adjustment": "later_only",
+          "not_before": "2026-11-05T12:00:00+08:00",
+          "not_after": "2026-11-05T14:00:00+08:00",
+          "deadline": "2026-11-05T15:00:00+08:00"
+        }
+      ],
+      "confirmations": {}
+    },
+    "expected": {
+      "status": "completed",
+      "saved": 1,
+      "times": {
+        "M18": "2026-11-05T13:00:00+08:00"
+      }
+    }
+  },
+  {
+    "name": "batch_collision",
+    "request": {
+      "request_id": "batch_collision-v2",
+      "items": [
+        {
+          "material_id": "M12",
+          "requested_time": "2026-11-06T18:00:00+08:00",
+          "hard_time": false,
+          "not_before": "2026-11-06T18:00:00+08:00",
+          "not_after": "2026-11-06T20:00:00+08:00"
+        },
+        {
+          "material_id": "M16",
+          "requested_time": "2026-11-06T19:00:00+08:00",
+          "hard_time": true
+        }
+      ],
+      "confirmations": {}
+    },
+    "expected": {
+      "status": "completed",
+      "saved": 2,
+      "times": {
+        "M12": "2026-11-06T20:00:00+08:00",
+        "M16": "2026-11-06T19:00:00+08:00"
+      }
+    }
+  }
+]

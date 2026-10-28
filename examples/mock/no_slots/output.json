@@ -10,6 +10,10 @@
     {
       "material_id": "M01",
       "status": "incomplete",
+      "time_constraints": {
+        "not_before": "2026-11-01T10:00:00+00:00",
+        "not_after": "2026-11-02T09:00:00+00:00"
+      },
       "review_status": "approved",
       "risk_reasons": [],
       "missing_fields": [],
@@ -29,8 +33,8 @@
       "tool_errors": []
     }
   ],
-  "data_sha256": "e112c80a46bd045b004b2d1429f5c08b38ad8472a3c612ee3a793e6aa1d954a1",
-  "run_at": "2026-10-28T06:17:43.929246+00:00",
+  "data_sha256": "5cac87bcb742adba1909cf0d8dfcafd73217d1d06e5a40f3619632327a41bff2",
+  "run_at": "2026-10-28T19:15:01.581354+00:00",
   "elapsed_seconds": 0.001,
   "limitation": "Mock verifies workflow only, not real model decisions."
 }

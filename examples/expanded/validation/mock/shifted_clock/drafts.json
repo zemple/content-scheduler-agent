@@ -1,0 +1,13 @@
+[
+  {
+    "draft_id": "D-d331be48952c439a",
+    "request_id": "shifted_clock-v2",
+    "material_id": "M15",
+    "requested_time": "2026-11-07T07:00:00+00:00",
+    "suggested_time": "2026-11-07T06:00:00+00:00",
+    "channel": "video",
+    "confirmation_status": "confirmed",
+    "pending_items": [],
+    "publication_status": "not_published"
+  }
+]

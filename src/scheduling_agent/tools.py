@@ -6,6 +6,7 @@ from datetime import datetime, timedelta
 from pathlib import Path
 
 from .domain import ValidationError, instant
+from .constraints import violations
 
 
 PARAMS = {
@@ -109,11 +110,37 @@ class Tools:
         if not isinstance(channel, str) or not channel:
             return {'ok': False, 'error': 'missing_channel'}
         start = datetime.fromisoformat(instant(start_time))
-        return {'ok': True, 'material_id': material_id, 'channel': channel, 'slots': [
-            {'time': (start + timedelta(hours=i)).isoformat(),
-             'available': self.store.available(channel, (start + timedelta(hours=i)).isoformat(),
-                                               self.world['schedule'], (self.request.request_id, material_id))}
-            for i in range(count)]}
+        slots = []
+        for i in range(count):
+            candidate = (start + timedelta(hours=i)).isoformat()
+            occupied = not self.store.available(channel, candidate, self.world['schedule'],
+                                                 (self.request.request_id, material_id))
+            reasons = self.time_violations(material_id, candidate)
+            slots.append({'time': candidate, 'occupied': occupied, 'constraint_violations': reasons,
+                          'available': not occupied and not reasons})
+        return {'ok': True, 'material_id': material_id, 'channel': channel, 'slots': slots}
+
+    def time_violations(self, material_id, candidate):
+        item = self.request.item(material_id)
+        candidate = instant(candidate)
+        reasons = violations(item, candidate)
+        # A flexible item must not consume a viable exact slot needed by another batch item.
+        own_target = self.request.confirmations.get(material_id, item['requested_time'])
+        if item['hard_time'] and candidate == own_target:
+            return reasons
+        channel = self.world['materials'].get(material_id, {}).get('channel')
+        saved = {d['material_id'] for d in self.store.drafts(self.request.request_id)}
+        for other in self.request.items:
+            mid = other['material_id']
+            target = self.request.confirmations.get(mid, other['requested_time'])
+            if mid == material_id or mid in saved or not other['hard_time'] or target != candidate:
+                continue
+            if self.world['materials'].get(mid, {}).get('channel') != channel or violations(other, target):
+                continue
+            review = self.check_rules(mid)
+            if review.get('ok') and review['review_status'] in ('approved', 'needs_review'):
+                reasons.append('reserved_for_fixed_item:' + mid)
+        return reasons
 
     def save_draft(self, material_id, suggested_time):
         time = instant(suggested_time)
@@ -123,6 +150,9 @@ class Tools:
         if review['review_status'] in ('needs_input', 'blocked'):
             return {'ok': False, 'error': 'review_not_passed', 'review': review}
         item = self.request.item(material_id)
+        reasons = self.time_violations(material_id, time)
+        if reasons:
+            return {'ok': False, 'error': 'time_constraint_violation', 'violations': reasons, 'review': review}
         pending = []
         if item['hard_time'] and time != item['requested_time'] and self.request.confirmations.get(material_id) != time:
             pending.append('time_change')
@@ -138,6 +168,7 @@ class Tools:
         mid = draft['material_id']
         review = self.check_rules(mid)
         problems = []
+        problems.extend(self.time_violations(mid, draft['suggested_time']))
         if not review.get('ok') or review.get('review_status') in ('blocked', 'needs_input'):
             problems.append('saved_material_no_longer_approved')
         elif review.get('review_status') == 'needs_review' and 'manual_review' not in draft['pending_items']:

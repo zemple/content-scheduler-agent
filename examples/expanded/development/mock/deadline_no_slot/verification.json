@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "checks": {
+    "task_status": true,
+    "draft_count": true,
+    "steps_bounded": true,
+    "data_hash": true,
+    "never_published": true,
+    "real_model_responses": true,
+    "no_model_error": true,
+    "trace:0": true,
+    "trace:1": true,
+    "trace:2": true,
+    "trace:3": true,
+    "trace:4": true
+  },
+  "actual_status": "incomplete",
+  "steps": 5
+}

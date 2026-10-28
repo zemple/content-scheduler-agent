@@ -31,6 +31,12 @@ class Agent:
                 observation = {'ok': not action.arguments}
                 if action.arguments:
                     observation['error'] = 'invalid_arguments'
+                else:
+                    unfinished = self.unfinished_reviewed_items(events)
+                    if unfinished:
+                        observation = {'ok': False, 'error': 'premature_finish',
+                                       'unfinished_materials': unfinished,
+                                       'message': 'These reviewed items still have unattempted feasible work. Choose next action; no tool was automatically executed.'}
             else:
                 observation = self.tools.call(action.tool, action.arguments)
             events.append({'step': step, 'tool': action.tool, 'arguments': action.arguments,
@@ -43,6 +49,23 @@ class Agent:
             event['result_summary'] = self.summary(event['observation'])
             event['next_action'] = events[i + 1]['tool'] if i + 1 < len(events) else 'stop:' + termination
         return self.report(events, termination, started), events
+
+    def unfinished_reviewed_items(self, events):
+        saved = {d['material_id'] for d in self.tools.store.drafts(self.tools.request.request_id)}
+        unfinished = []
+        for item in self.tools.request.items:
+            mid = item['material_id']
+            own = [e for e in events if e['arguments'].get('material_id') == mid]
+            reviews = [e['observation'] for e in own if e['tool']=='check_rules' and e['observation'].get('ok')]
+            if mid in saved or not reviews or reviews[-1]['review_status'] not in ('approved','needs_review'):
+                continue
+            if any(not e['observation'].get('ok') for e in own):
+                continue
+            queries = [e['observation'] for e in own if e['tool']=='query_slots' and e['observation'].get('ok')]
+            latest_slots = {s['time']:s['available'] for q in queries for s in q['slots']}
+            if not queries or any(latest_slots.values()):
+                unfinished.append(mid)
+        return unfinished
 
     @staticmethod
     def summary(observation):
@@ -70,8 +93,9 @@ class Agent:
             validation = self.tools.validate_saved(draft) if draft else None
             if validation:
                 review = validation['review']
-            suggestions = [s['time'] for e in own if e['tool'] == 'query_slots' and e['observation'].get('ok')
-                           for s in e['observation']['slots'] if s['available']]
+            latest_slots = {s['time']:s['available'] for e in own if e['tool'] == 'query_slots' and e['observation'].get('ok')
+                            for s in e['observation']['slots']}
+            suggestions = [time for time, available in latest_slots.items() if available]
             status = 'incomplete'
             if draft:
                 status = 'awaiting_confirmation' if draft['confirmation_status'] == 'pending' else 'completed'
@@ -107,6 +131,7 @@ class Agent:
                 if status == 'incomplete' and not uncompleted:
                     uncompleted.append('model_stopped_without_save' if termination == 'finished' else termination)
             items.append({'material_id': mid, 'status': status,
+                          'time_constraints': {k: item[k] for k in ('adjustment', 'not_before', 'not_after', 'deadline') if k in item},
                           'review_status': review.get('review_status', 'not_checked'),
                           'risk_reasons': review.get('risks', []), 'missing_fields': review.get('missing_fields', []),
                           'requested_time': item['requested_time'], 'hard_time': item['hard_time'],

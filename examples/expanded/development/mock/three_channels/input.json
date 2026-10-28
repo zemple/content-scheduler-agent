@@ -1,0 +1,21 @@
+{
+  "request_id": "three_channels-v2",
+  "items": [
+    {
+      "material_id": "M06",
+      "requested_time": "2026-11-06T11:00:00+00:00",
+      "hard_time": true
+    },
+    {
+      "material_id": "M09",
+      "requested_time": "2026-11-06T11:00:00+00:00",
+      "hard_time": true
+    },
+    {
+      "material_id": "M08",
+      "requested_time": "2026-11-06T11:00:00+00:00",
+      "hard_time": true
+    }
+  ],
+  "confirmations": {}
+}

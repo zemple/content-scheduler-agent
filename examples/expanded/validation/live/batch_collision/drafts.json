@@ -1,0 +1,24 @@
+[
+  {
+    "draft_id": "D-6fa07f6a3ef740bc",
+    "request_id": "batch_collision-v2",
+    "material_id": "M12",
+    "requested_time": "2026-11-06T10:00:00+00:00",
+    "suggested_time": "2026-11-06T12:00:00+00:00",
+    "channel": "social",
+    "confirmation_status": "confirmed",
+    "pending_items": [],
+    "publication_status": "not_published"
+  },
+  {
+    "draft_id": "D-f56de370b9d44191",
+    "request_id": "batch_collision-v2",
+    "material_id": "M16",
+    "requested_time": "2026-11-06T11:00:00+00:00",
+    "suggested_time": "2026-11-06T11:00:00+00:00",
+    "channel": "social",
+    "confirmation_status": "confirmed",
+    "pending_items": [],
+    "publication_status": "not_published"
+  }
+]

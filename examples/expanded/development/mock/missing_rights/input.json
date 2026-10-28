@@ -1,0 +1,11 @@
+{
+  "request_id": "missing_rights-v2",
+  "items": [
+    {
+      "material_id": "M19",
+      "requested_time": "2026-11-06T10:00:00+00:00",
+      "hard_time": false
+    }
+  ],
+  "confirmations": {}
+}

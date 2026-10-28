@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "checks": {
+    "task_status": true,
+    "draft_count": true,
+    "steps_bounded": true,
+    "data_hash": true,
+    "never_published": true,
+    "real_model_responses": true,
+    "no_model_error": true,
+    "time:M05": true,
+    "time:M06": true,
+    "trace:0": true,
+    "trace:1": true,
+    "trace:2": true,
+    "trace:3": true,
+    "trace:4": true,
+    "trace:5": true,
+    "trace:6": true,
+    "trace:7": true,
+    "trace:8": true,
+    "trace:9": true,
+    "constraints:M05": true,
+    "actual_save:M05": true,
+    "constraints:M06": true,
+    "actual_save:M06": true
+  },
+  "actual_status": "completed",
+  "steps": 10
+}
